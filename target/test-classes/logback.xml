@@ -1,0 +1,29 @@
+<configuration>
+    <!--  Log to Console  -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%highlight(%p)] %logger{35} - %cyan(%msg) %n</pattern>
+        </layout>
+    </appender>
+
+    <!--  Log to File  -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/execution.txt</file>
+
+        <!-- Must set property -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/execution.%d{yyyy-MM-dd}.txt</fileNamePattern>
+        </rollingPolicy>
+
+        <!-- Log file must use encoder tab -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %p %logger{35} - %M - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--    Set default level-->
+    <logger name="com.sample.dl" level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+</configuration>

@@ -1,0 +1,119 @@
+
+# Note for Prj
+1. Compact Middle Packages
+
+# Test Runner Collected Note
+// How to run
+// mvn test -Dcucumber.filter.tags="@smoke and @fast"
+//# Linux / OS X:
+//        CUCUMBER_FILTER_TAGS="@smoke and @fast" mvn test
+//
+//# Windows:
+//        set CUCUMBER_FILTER_TAGS="@smoke and @fast"
+//        mvn test
+
+// Ex: (@smoke or @ui) and (not @slow)
+//
+//java -cp "path/to/each/jar:path/to/compiled/.class/files" io.cucumber.core.cli.Main /path/to/your/feature/files --glue hellocucumber
+//
+//
+//mvn exec:java                                         \
+//        -Dexec.classpathScope=test                    \
+//        -Dexec.mainClass=io.cucumber.core.cli.Main    \
+//        -Dexec.args="/path/to/your/feature/files --glue hellocucumber"
+
+// Filter tags
+// mvn test -Dcucumber.filter.tags="@smoke"
+
+# Issues:
+1. Using io.github.bonigarcia will face the exception:
+java.lang.NoSuchMethodError: com.google.common.base.Preconditions.checkState
+Cause: version of guava incompatible
+    + Update to: <guava.version>29.0-jre</guava.version>
+
+2. Basescript groovy: Tranform groovy script as class
+//import groovy.transform.BaseScript
+
+/**
+ * import groovy.transform.BaseScript
+ * @BaseScript A_Steps a_steps
+ * Above code is used to extends A_Steps script as class
+ * OR
+ * @groovy.transform.BaseScript A_Steps a_steps
+ *
+ */
+
+@BaseScript A_Steps aSteps
+insideAStepMethod()
+
+3. Multiple glue:
+    1. Runner
+    glue = {
+                        "com.sample.dl.bdd.cucumber.supporters",
+                        "com.sample.dl.bdd.cucumber.step.definitions"
+                }
+
+    2. IntelliJ
+    To run in IntelliJ: Open Debug Setting, Add glue: com.sample.dl.bdd.cucumber.step.definitions com.sample.dl.bdd.cucumber.supporters
+       Other info:
+        + Main class:io.cucumber.core.cli.Main
+        + Feature: /src/test/groovy/com/sample/dl/cucumber/features/API_RestAssured.feature
+        + Program Argument:  --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name "^As API mock is ready$"
+        + Working directory: $MODULE_WORKING_DIR$
+        + Shorten command line: none]
+
+4. Display type hint
+     Cltr + Alt + S >> Show inlay hints
+
+5. Cannot navigate to Spring Application Context
+    1. Conflict picocontiner & cucumber spring due to the same Factory
+    2. Conflict Cucumber TestNG with TestNG and TestNG inside Groovy All
+    3. Need sufficient package:
+        + Cucumber: cucumber-java, cucumber-testng, cucumber-spring, cucumber-core
+        + Spring: spring-context, spring-test
+
+6. Lombok plugin >> Enable to use log4j annotation
+
+7. Implicit Hook context is deprecated >> Add @CucumberContextConfiguration to Hook
+
+8. PageFactory init
+    1. Create interface PageStep >> Implement in page object
+    2. Add to hook:
+            1 --------------------
+            @Autowired
+                private List<BasePage> pages;
+
+            2 --------------------
+            for(BasePage a : pages){
+                initElements(driver, a);
+            }
+
+9. mvn intermittent >> Rerun Runner. Check prj config for Groovy Java
+    https://github.com/groovy/groovy-eclipse/wiki/Groovy-Eclipse-Maven-plugin#setting-up-the-source-folders
+
+    Note: Have to java class in main/java/test & test/java
+
+10. After clear driver. Can NOT reopen target to bean WebDriver
+    @DirtiesContext at HOOK
+
+
+10. Multiple app configuration
+    https://www.concretepage.com/spring-5/contextconfiguration-example-spring-test
+
+11. Group configuration context
+    https://www.baeldung.com/spring-import-annotation
+
+12. Issue due to Rest Assured
+    Error message:
+    java.lang.AbstractMethodError: io.restassured.internal.ResponseParserRegistrar.getProperty(Ljava/lang/String;)
+
+    Reason: Version 4.3.0 updat Groovy to 3.x.x
+    https://github.com/rest-assured/rest-assured/blob/master/changelog.txt
+
+    Fixed: Use 4.2.0
+
+??? mvn clean install -DskipTests
+
+CLI:
+    mvn clean test -Dtest.type=ws
+    mvn clean test -Dtest.type=ui
