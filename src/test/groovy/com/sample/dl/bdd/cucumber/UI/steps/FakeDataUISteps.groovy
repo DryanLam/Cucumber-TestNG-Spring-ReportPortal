@@ -14,22 +14,21 @@ class FakeDataUISteps {
     @Autowired
     HomePage homePage
 
-
     @Given(/^I navigate to home page/)
     def i_navigate_to_home_page() {
         homePage.goToHomePage()
-        log.info("I NAVIGATED TO HOME PAGE")
-
     }
 
     @When(/^I refresh the homepage$/)
     def i_refresh_the_home_page() {
         homePage.refreshPage()
+        log.info("Page is refreshed")
     }
 
     @Then(/^The '(.+)' should be displayed correctly$/)
     def the_key_sells_should_be_displayed(def keySell) {
         def isExisted = homePage.isKeySellExist(keySell)
+        log.info(keySell)
         Assert.assertTrue(isExisted)
 
     }

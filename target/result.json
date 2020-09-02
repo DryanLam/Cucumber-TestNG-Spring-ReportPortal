@@ -1,0 +1,160 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 6,
+        "name": "User is already on homepage",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 386854100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I navigate to home page",
+            "match": {
+              "location": "FakeDataUISteps.i_navigate_to_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-09-02T19:19:19.758Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3071433100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "UIHooks.setUpScenario()"
+            }
+          }
+        ],
+        "line": 30,
+        "name": "I can get empty responses",
+        "description": "",
+        "id": "web-app;i-can-get-empty-responses;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 79132000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "UIHooks.tearDownScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 190166000,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I click on \u0027GET\u0027 of \u0027SINGLE USER NOT FOUND\u0027 at Give it a try",
+            "match": {
+              "arguments": [
+                {
+                  "val": "GET",
+                  "offset": 12
+                },
+                {
+                  "val": "SINGLE USER NOT FOUND",
+                  "offset": 21
+                }
+              ],
+              "location": "FakeDataUISteps.i_click_on_method_of_request_at_give_a_try(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 39286600,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "The request \u0027/api/users/23\u0027 is display on the left column",
+            "match": {
+              "arguments": [
+                {
+                  "val": "/api/users/23",
+                  "offset": 13
+                }
+              ],
+              "location": "FakeDataUISteps.the_request_api_users_is_display_on_the_left_column(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 46549300,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "The response code \u0027404\u0027is displayed on the right column",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 19
+                }
+              ],
+              "location": "FakeDataUISteps.the_is_displayed_on_the_right_column(Integer)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 33698900,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "The response data\u0027{}\u0027 is displayed under right column",
+            "match": {
+              "arguments": [
+                {
+                  "val": "{}",
+                  "offset": 18
+                }
+              ],
+              "location": "FakeDataUISteps.the_is_displayed_under_right_column(String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UI"
+          },
+          {
+            "name": "@UI_Browsers"
+          }
+        ]
+      }
+    ],
+    "name": "Web App",
+    "description": "  As a normal user\n  I am able to get data from UI",
+    "id": "web-app",
+    "keyword": "Feature",
+    "uri": "file:src/test/groovy/com/sample/dl/bdd/cucumber/UI/features/AC001_Fake%20Data%20UI.feature",
+    "tags": [
+      {
+        "name": "@UI",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

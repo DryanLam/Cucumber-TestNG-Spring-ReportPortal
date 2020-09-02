@@ -21,9 +21,6 @@ class HomePage{
     @FindBy(how = How.CSS, using = ".v-center h3")
     private List<WebElement> keySells
 
-    @FindBy(how = How.CSS, using = ".tagline:first-of-type")
-    private WebElement tagLineTitle
-
     @FindBy(css = ".request-title .url")
     private WebElement requestPath
 
@@ -68,10 +65,6 @@ class HomePage{
         pageAction.waitForPageLoad()
         return pageAction.getText(responseCode)
     }
-
-//    def getTagLineTitle(){
-//        return pageAction.getText(tagLineTitle)
-//    }
 
     def isKeySellExist(String keySell){
         def values = keySells.collect{element -> pageAction.getText(element).trim()}

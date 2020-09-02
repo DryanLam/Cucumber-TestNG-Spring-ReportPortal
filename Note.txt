@@ -117,3 +117,4 @@ insideAStepMethod()
 CLI:
     mvn clean test -Dtest.type=ws
     mvn clean test -Dtest.type=ui
+    mvn sonar:sonar
