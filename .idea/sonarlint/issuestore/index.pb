@@ -19,8 +19,6 @@ Esrc/test/groovy/com/sample/dl/bdd/cucumber/UI/pages/PageAction.groovy,3\5\350a
 Psrc/test/groovy/com/sample/dl/bdd/cucumber/UI/configuration/UIConfiguration.java,9\1\91a018bdf0a810691ea63c3f112ee49f44fad285
 m
 =src/test/groovy/com/sample/dl/bdd/utils/ws/BaseGateway.groovy,7\4\74f2bd6acf91e26c927c3d987ad2fec55420e16b
-t
-Dsrc/test/groovy/com/sample/dl/bdd/utils/drivers/DriverManager.groovy,b\d\bd579b94a38dee48bb07c41a90827b3d6072f19f
 m
 =src/test/groovy/com/sample/dl/bdd/utils/asserts/Assert.groovy,2\9\29e9cbf0fa5fe7d2d5773648c1e70c20b653108f
 p
@@ -79,9 +77,9 @@ m
 =src/test/groovy/com/sample/dl/bdd/utils/common/Helpers.groovy,e\b\ebf1682314d2f46ac10bc46f98de33518ae48546
 t
 Dsrc/test/groovy/com/sample/dl/bdd/utils/drivers/DriverOptions.groovy,4\4\4401c86c33a64e3bd0c1b89a077f5570edb52e26
-y
-Isrc/test/groovy/com/sample/dl/bdd/utils/drivers/LocalDriverManager.groovy,b\c\bcb421cef135e503d5da76c5834ede6021b8419f
 w
 Gsrc/test/groovy/com/sample/dl/bdd/utils/drivers/WebDriverFactory.groovy,5\9\597d3b8a75d0a10f1f57fc13ca6220fb788847c7
 s
 Csrc/test/groovy/com/sample/dl/bdd/utils/common/ConfigHandler.groovy,b\6\b6487ac55231a2f1b172196ee77b31b882dded45
+r
+Bsrc/test/groovy/com/sample/dl/bdd/utils/drivers/LocalDriver.groovy,2\6\26fae855d393d742d41e428a6c9bb14cc98a17be

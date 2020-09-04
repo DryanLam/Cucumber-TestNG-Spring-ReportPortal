@@ -1,6 +1,7 @@
 package com.sample.dl.bdd.cucumber.WS.configuration;
 
 import com.sample.dl.bdd.utils.ws.BaseGateway;
+import com.sample.dl.bdd.utils.ws.WSResponse;
 import io.restassured.filter.cookie.CookieFilter;
 import io.restassured.http.ContentType;
 import io.restassured.http.Cookies;
@@ -18,12 +19,14 @@ import static io.restassured.RestAssured.given;
 @Component
 class AppGateway extends BaseGateway {
 
-
     @Autowired
     WSConfiguration wsConfig;
 
     @Value("${endpoint.ws.authentication}")
     private String auEndpoint;
+
+    @Autowired
+    WSResponse res;
 
     @Autowired
     public AppGateway(RestTemplate restTemplate, @Value("${ws.app.url}") String baseUri) {
@@ -46,22 +49,24 @@ class AppGateway extends BaseGateway {
                 .andReturn();
     }
 
-    public Response doPostRequest(String uriPath, Object bodyObj) {
-        return given()
-                .filter(filter)
-                .contentType(ContentType.JSON)
-                .headers(header)
-                .body(bodyObj)
-                .post(buildUri(uriPath))
-                .thenReturn();
+    public void doPostRequest(String uriPath, Object bodyObj) {
+        Response response = given()
+                             .filter(filter)
+                             .contentType(ContentType.JSON)
+                             .headers(header)
+                             .body(bodyObj)
+                             .post(buildUri(uriPath))
+                             .thenReturn();
+        res.setResponse(response);
     }
 
-    public Response doGetRequest(String uriPath) {
-        return given()
-                .filter(filter)
-                .headers(header)
-                .contentType(ContentType.JSON)
-                .get(buildUri(uriPath))
-                .thenReturn();
+    public void doGetRequest(String uriPath) {
+        Response response =  given()
+                                .filter(filter)
+                                .headers(header)
+                                .contentType(ContentType.JSON)
+                                .get(buildUri(uriPath))
+                                .thenReturn();
+        res.setResponse(response);
     }
 }
