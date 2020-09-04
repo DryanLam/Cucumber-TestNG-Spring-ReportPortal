@@ -7,7 +7,8 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.BeforeSuite;
 
 @CucumberOptions(
-        tags = {"@WS_Regression"},
+//        tags = {"@WS_Regression"},
+        tags = {"@Excel"},
         features = {"src/test/groovy/com/sample/dl/bdd/cucumber/WS/features"},
         strict = true,
         plugin = {

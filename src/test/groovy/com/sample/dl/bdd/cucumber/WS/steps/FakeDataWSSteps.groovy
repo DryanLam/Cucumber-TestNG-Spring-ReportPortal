@@ -3,14 +3,20 @@ package com.sample.dl.bdd.cucumber.WS.steps
 import com.sample.dl.bdd.cucumber.WS.configuration.AppGateway
 import com.sample.dl.bdd.cucumber.WS.dto.UserDTO
 import com.sample.dl.bdd.utils.asserts.Assert
+import com.sample.dl.bdd.utils.common.ExcelUtils
 import com.sample.dl.bdd.utils.common.Parser
 import com.sample.dl.bdd.utils.ws.WSResponse
+import groovy.util.logging.Slf4j
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import org.springframework.beans.factory.annotation.Autowired
 
+@Slf4j
 class FakeDataWSSteps {
+
+    @Autowired
+    ExcelUtils excel
 
     @Autowired
     AppGateway gateway
@@ -48,5 +54,16 @@ class FakeDataWSSteps {
         UserDTO expected = parser.parseFromJson(jsonBody, UserDTO.class);
         UserDTO actual = parser.parseFromJson(response.getBodyAsString(), UserDTO.class);
         Assert.assertEquals(expected, actual)
+    }
+
+
+    @Given(/^I read excel file$/)
+    def testExcel(){
+        String filePath = "TestData.xlsx"
+        String sheetName = "Sheet1"
+        int rowNum = 2
+        int colNum = 2
+        def celValue = excel.readFile(filePath, sheetName, rowNum, colNum)
+        log.info(celValue.toString())
     }
 }

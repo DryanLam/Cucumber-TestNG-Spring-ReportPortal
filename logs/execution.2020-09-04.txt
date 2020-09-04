@@ -1,0 +1,116 @@
+2020-09-04 11:15:00 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 11:15:00 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 11:15:00 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 11:32:31 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 11:32:31 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 11:32:31 INFO c.s.d.b.c.UI.pages.PageAction - getText - 404
+2020-09-04 11:32:31 INFO c.s.d.b.c.UI.pages.PageAction - getText - {}
+2020-09-04 11:39:53 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 11:39:54 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 11:39:54 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 16:09:00 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:09:05 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:09:05 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 16:09:11 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 16:09:11 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 16:09:11 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 16:11:34 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:11:38 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:11:38 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 16:11:43 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 16:11:43 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 16:11:43 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 16:19:47 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:21:59 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:22:03 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:22:03 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 16:22:09 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 16:22:09 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 16:22:09 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 16:22:47 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:22:51 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:22:51 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 16:22:55 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 16:22:56 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - i_refresh_the_home_page - Page is refreshed
+2020-09-04 16:22:56 INFO c.s.d.b.c.UI.pages.PageAction - getText - Fake data
+2020-09-04 16:22:56 INFO c.s.d.b.c.UI.pages.PageAction - getText - Real responses
+2020-09-04 16:22:56 INFO c.s.d.b.c.UI.pages.PageAction - getText - Always-on
+2020-09-04 16:22:56 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - the_key_sells_should_be_displayed - Fake data
+2020-09-04 16:22:56 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:22:59 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:22:59 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 16:23:05 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 16:23:06 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - i_refresh_the_home_page - Page is refreshed
+2020-09-04 16:23:06 INFO c.s.d.b.c.UI.pages.PageAction - getText - Fake data
+2020-09-04 16:23:06 INFO c.s.d.b.c.UI.pages.PageAction - getText - Real responses
+2020-09-04 16:23:06 INFO c.s.d.b.c.UI.pages.PageAction - getText - Always-on
+2020-09-04 16:23:06 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - the_key_sells_should_be_displayed - Real responses
+2020-09-04 16:23:06 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:23:09 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:23:09 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 16:23:16 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 16:23:17 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - i_refresh_the_home_page - Page is refreshed
+2020-09-04 16:23:17 INFO c.s.d.b.c.UI.pages.PageAction - getText - Fake data
+2020-09-04 16:23:17 INFO c.s.d.b.c.UI.pages.PageAction - getText - Real responses
+2020-09-04 16:23:17 INFO c.s.d.b.c.UI.pages.PageAction - getText - Always-on
+2020-09-04 16:23:17 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - the_key_sells_should_be_displayed - Always-on
+2020-09-04 16:23:17 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:23:20 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:23:20 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 16:23:25 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 16:23:26 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 16:23:26 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 16:25:10 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:25:14 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:25:14 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 16:25:19 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 16:25:19 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - i_refresh_the_home_page - Page is refreshed
+2020-09-04 16:25:19 INFO c.s.d.b.c.UI.pages.PageAction - getText - Fake data
+2020-09-04 16:25:19 INFO c.s.d.b.c.UI.pages.PageAction - getText - Real responses
+2020-09-04 16:25:19 INFO c.s.d.b.c.UI.pages.PageAction - getText - Always-on
+2020-09-04 16:25:19 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - the_key_sells_should_be_displayed - Fake data
+2020-09-04 16:25:19 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 16:25:22 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 16:25:22 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 17:25:52 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 17:25:58 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 17:25:58 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 17:26:05 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 17:26:06 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - i_refresh_the_home_page - Page is refreshed
+2020-09-04 17:26:06 INFO c.s.d.b.c.UI.pages.PageAction - getText - Fake data
+2020-09-04 17:26:06 INFO c.s.d.b.c.UI.pages.PageAction - getText - Real responses
+2020-09-04 17:26:06 INFO c.s.d.b.c.UI.pages.PageAction - getText - Always-on
+2020-09-04 17:26:06 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - the_key_sells_should_be_displayed - Fake data
+2020-09-04 17:26:06 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 17:26:10 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 17:26:10 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 17:26:15 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 17:26:16 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - i_refresh_the_home_page - Page is refreshed
+2020-09-04 17:26:16 INFO c.s.d.b.c.UI.pages.PageAction - getText - Fake data
+2020-09-04 17:26:16 INFO c.s.d.b.c.UI.pages.PageAction - getText - Real responses
+2020-09-04 17:26:16 INFO c.s.d.b.c.UI.pages.PageAction - getText - Always-on
+2020-09-04 17:26:16 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - the_key_sells_should_be_displayed - Real responses
+2020-09-04 17:26:16 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 17:26:19 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 17:26:19 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 17:26:24 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 17:26:25 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - i_refresh_the_home_page - Page is refreshed
+2020-09-04 17:26:25 INFO c.s.d.b.c.UI.pages.PageAction - getText - Fake data
+2020-09-04 17:26:25 INFO c.s.d.b.c.UI.pages.PageAction - getText - Real responses
+2020-09-04 17:26:25 INFO c.s.d.b.c.UI.pages.PageAction - getText - Always-on
+2020-09-04 17:26:25 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - the_key_sells_should_be_displayed - Always-on
+2020-09-04 17:26:25 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 17:26:29 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 17:26:29 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 17:26:34 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 17:26:34 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 17:26:34 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 17:26:34 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-04 17:26:38 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-04 17:26:38 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-04 17:26:49 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 17:26:49 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/unknown/23
+2020-09-04 17:26:50 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 23:14:35 INFO c.s.dl.bdd.utils.common.ExcelUtils - openWorkbook - File does not exist: D:\QADP\CodeTech\Cucumber_TestNG_Springtest/groovy/com/sample/dl/bdd/cucumber/data/TestData.xlsx
+2020-09-04 23:15:43 INFO c.s.dl.bdd.utils.common.ExcelUtils - openWorkbook - File does not exist: D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/cucumber/data/TestData.xlsx
+2020-09-04 23:18:34 INFO c.s.dl.bdd.utils.common.ExcelUtils - openWorkbook - File does not exist: D:\QADP\CodeTech\Cucumber_TestNG_Springsrc/test/groovy/com/sample/dl/bdd/cucumber/data/TestData.xlsx

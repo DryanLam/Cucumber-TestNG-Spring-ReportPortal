@@ -83,3 +83,5 @@ s
 Csrc/test/groovy/com/sample/dl/bdd/utils/common/ConfigHandler.groovy,b\6\b6487ac55231a2f1b172196ee77b31b882dded45
 r
 Bsrc/test/groovy/com/sample/dl/bdd/utils/drivers/LocalDriver.groovy,2\6\26fae855d393d742d41e428a6c9bb14cc98a17be
+l
+<src/test/groovy/com/sample/dl/bdd/utils/ws/WSResponse.groovy,e\c\ec7f7b093f2c4d1c17e4b3e3a9af02ddbe0e33b7
