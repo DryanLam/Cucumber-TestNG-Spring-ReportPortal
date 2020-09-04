@@ -1,5 +1,6 @@
 package com.sample.dl.bdd.cucumber.UI.hooks;
 
+import com.sample.dl.bdd.utils.report.ReportService;
 import com.sample.dl.contexts.AppContext;
 import com.sample.dl.bdd.cucumber.UI.configuration.UIConfiguration;
 import com.sample.dl.bdd.cucumber.UI.pages.PageAction;

@@ -1,56 +1,56 @@
 package com.sample.dl.bdd.utils.drivers
 
 import com.sample.dl.bdd.utils.common.ConfigHandler
+import groovy.util.logging.Slf4j
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.remote.DesiredCapabilities
 import org.openqa.selenium.remote.RemoteWebDriver
-
 import java.util.concurrent.TimeUnit
 
+@Slf4j
 class WebDriverFactory {
-    private static ConfigHandler config;
-    private static String browserType;
-    private static WebDriver driver;
+    private static ConfigHandler config
+    private static String browserType
+    private static WebDriver driver
 
     static WebDriver getDriver() {
         config = new ConfigHandler()
         WebDriver methodLocalDriver
         browserType = config.getBrowserType()
-        String gridHubServer = config.getGridHubServer();
+        String gridHubServer = config.getGridHubServer()
 
         if ((gridHubServer != null) && !gridHubServer.isEmpty()) {
-            methodLocalDriver = getRemoteDriver();
+            methodLocalDriver = getRemoteDriver()
         } else {
-            methodLocalDriver = getLocalDriver();
+            methodLocalDriver = getLocalDriver()
         }
-        return methodLocalDriver;
+        return methodLocalDriver
     }
 
     private static void setBrowserTimeouts() {
-        // Page load timeout
-        int timeout = config.getBrowserPageLoadTimeout();
-//        logger.info(String.format("Set browser page load timeout to %d", requested));
-        driver.manage().timeouts().pageLoadTimeout(timeout, TimeUnit.SECONDS);
-
+        // Page loads timeout
+        int timeout = config.getBrowserPageLoadTimeout()
+        log.info(String.format("Set browser page load timeout to %d", timeout))
+        driver.manage().timeouts().pageLoadTimeout(timeout, TimeUnit.SECONDS)
         // Script timeout
         timeout = config.getBrowserScriptTimeout();
-//        logger.info(String.format("Set browser script timeout to %d", requested));
+        log.info(String.format("Set browser script timeout to %d", timeout))
         driver.manage().timeouts().setScriptTimeout(timeout, TimeUnit.SECONDS)
     }
 
 
     private static WebDriver getLocalDriver() {
-////        logger.info("Creating local " + browserType + " Webdriver");
-//        WebDriver methodLocalDriver;
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        log.info("Creating local " + browserType + " Webdriver")
+
+        DesiredCapabilities capabilities = new DesiredCapabilities()
 
         switch (browserType) {
             case "CHROME":
                 Object options = DriverOptions.setChromeProfile()
                 capabilities.setCapability(ChromeOptions.CAPABILITY, options)
-                driver = DriverManager.getChrome()
+                driver = LocalDriver.getChrome(capabilities)
                 break;
 
             default:
@@ -58,7 +58,7 @@ class WebDriverFactory {
                 if (options != null) {
                     capabilities.setCapability("firefoxOptions", options)
                 }
-                driver = DriverManager.getFirefox()
+                driver = LocalDriver.getFirefox(capabilities)
                 break;
         }
         setBrowserTimeouts()
@@ -66,18 +66,16 @@ class WebDriverFactory {
     }
 
     private static WebDriver getRemoteDriver() {
-//        WebDriver remoteDriver = null;
-        String gridHubUrl;
+        String gridHubUrl
+        DesiredCapabilities capabilities
+
         if (config.getGridHubServer().split(":").length == 2) {
             gridHubUrl = String.format("http://%s/wd/hub", config.getGridHubServer())
         } else {
-            gridHubUrl = String.format("http://%s:4444/wd/hub", config.getGridHubServer());
+            gridHubUrl = String.format("http://%s:4444/wd/hub", config.getGridHubServer())
         }
+        log.info("Creating remote " + browserType + " WebDriver on " + gridHubUrl)
 
-//        logger.info("Creating remote " + browserType + " Webdriver on " + gridHubUrl);
-        DesiredCapabilities capabilities;
-
-        // Set up browser specific capabilities
         switch (browserType) {
             case "CHROME":
                 Object options = DriverOptions.setChromeProfile()
@@ -90,24 +88,21 @@ class WebDriverFactory {
             default:
                 Object options = DriverOptions.setFirefoxProfile()
                 capabilities = DesiredCapabilities.firefox()
-                if (options != null) {
+                if (options) {
                     capabilities.setCapability(FirefoxDriver.PROFILE, options)
                 }
                 break;
         }
 
-
         // Add any capabilities across all browsers
         capabilities.setJavascriptEnabled(true)
 
-        // create the driver
         try {
             driver = new RemoteWebDriver(new URL(gridHubUrl), capabilities)
         } catch (final MalformedURLException e) {
-//            logger.error(e.getStackTrace());
+            log.error(e.getStackTrace());
         }
         setBrowserTimeouts()
-        return driver;
+        return driver
     }
-
 }

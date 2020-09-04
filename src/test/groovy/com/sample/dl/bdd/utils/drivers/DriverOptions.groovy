@@ -5,7 +5,7 @@ import org.openqa.selenium.firefox.FirefoxProfile
 
 class DriverOptions {
 
-    public static FirefoxProfile setFirefoxProfile() {
+    static FirefoxProfile setFirefoxProfile() {
         FirefoxProfile profile = new FirefoxProfile();
         profile.setPreference("browser.download.manager.alertOnEXEOpen", false);
         profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/pdf,application/octet-stream doc xls txt xlsx");
@@ -20,7 +20,7 @@ class DriverOptions {
         return profile;
     }
 
-    public static ChromeOptions setChromeProfile() {
+    static ChromeOptions setChromeProfile() {
         String downloadFilepath = "/path/to/download";
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("profile.default_content_settings.popups", 0);

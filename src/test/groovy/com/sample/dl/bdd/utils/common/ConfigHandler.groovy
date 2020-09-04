@@ -1,6 +1,8 @@
 package com.sample.dl.bdd.utils.common
 
+import groovy.util.logging.Slf4j
 
+@Slf4j
 class ConfigHandler {
     private Properties prop
 
@@ -14,7 +16,7 @@ class ConfigHandler {
             def inputStream = ClassLoader.getSystemResourceAsStream("config.properties")
             prop.load(inputStream);
         }catch (Exception e){
-//            log.info(e.printStackTrace())
+            log.info(e.printStackTrace())
         }
     }
 

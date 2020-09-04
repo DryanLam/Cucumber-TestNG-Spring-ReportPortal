@@ -1,6 +1,5 @@
 package com.sample.dl.contexts;
 
-import com.sample.dl.bdd.utils.drivers.DriverManager;
 import com.sample.dl.bdd.utils.drivers.WebDriverFactory;
 import com.sample.dl.contexts.scopes.TestScope;
 import org.openqa.selenium.WebDriver;
@@ -38,8 +37,7 @@ public class AppContext {
 
     @Bean
     @Scope("test")
-    public WebDriver getWebDriver() {
-//        return DriverManager.getDriver();
+    public WebDriver getDriver() {
         return WebDriverFactory.getDriver();
     }
 }
