@@ -3,14 +3,6 @@
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 8
 Note.txt,3\e\3e1e38e846027561a5c56ac8171ec61d03e64e8b
-b
-2src/test/java/com/sample/dl/testng/TestNGBase.java,2\3\23f0976de1a124c96dfcc7eec8e6a6bceb64ec18
-h
-8src/test/java/com/sample/dl/testng/WebDriverFactory.java,e\f\ef166da9c823285689c4bf8721c5929348de1b72
-D
-src/test/java/B.java,f\3\f3a7d2abf83695837b156c606c82c6ba11916faf
-D
-src/main/java/A.java,4\a\4a6f117cb2ff505f46e14f776bdf2012046d5789
 {
 Ksrc/test/groovy/com/sample/dl/bdd/cucumber/WS/configuration/AppGateway.java,b\f\bfdccde5859429f73da366ccdf25e2cf07287120
 €
@@ -77,3 +69,9 @@ B
 logs/execution.txt,6\0\60dfb0c46a78e8d83b4d015e4a4f8e243366b176
 p
 @src/test/groovy/com/sample/dl/bdd/utils/common/LogManager.groovy,4\3\433b90422351afff770b4bc131b798da0432b197
+z
+Jsrc/test/groovy/com/sample/dl/bdd/cucumber/UI/runner/UIRunnerReportIO.java,8\a\8ad8da5eca8f7a46dc80fbcc4dcc0f384f8f68d2
+I
+docker/docker-compose.yml,3\f\3fe733692645251b38d6ef0a55b2d48c3a1cf387
+z
+Jsrc/test/groovy/com/sample/dl/bdd/cucumber/WS/runner/WSRunnerReportIO.java,f\b\fb17e0e623919d149f51f7d534f9bdd3c15729dc
