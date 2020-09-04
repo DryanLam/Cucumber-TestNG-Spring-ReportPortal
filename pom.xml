@@ -12,6 +12,7 @@
     <properties>
         <!-- PROJECT CONFIG -->
         <test.type>UI</test.type>
+        <test.name>UI</test.name>
         <environment>UI-Endpoints</environment>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compile.encoding>UTF-8</maven.compile.encoding>
@@ -267,7 +268,7 @@
                             <environment>${environment}</environment>
                         </systemPropertyVariables>
                         <suiteXmlFiles>
-                            <suiteXmlFile>src/test/resources/${test.type}/${test.type}-testsuite.xml</suiteXmlFile>
+                            <suiteXmlFile>src/test/resources/${test.type}/${test.name}-testsuite.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>

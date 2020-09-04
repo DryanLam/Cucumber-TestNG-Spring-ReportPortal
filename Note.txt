@@ -115,6 +115,11 @@ insideAStepMethod()
 ??? mvn clean install -DskipTests
 
 CLI:
+    # UI default
     mvn clean test -Dtest.type=ws
-    mvn clean test -Dtest.type=ui
+    # UI ReportIO
+    mvn clean test -Dtest.name=ui
     mvn sonar:sonar
+
+    mvn clean test -Dtest.type=WS -Dtest.name=WSIO -Drp.launch=WS_TADP
+
