@@ -1,53 +1,37 @@
 package com.sample.dl.bdd.cucumber.WS.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import java.util.Objects;
 
+/**
+ * @Accessors(fluent = true, chain = true)
+ * @NoArgsConstructor
+ * @JsonIgnoreProperties
+ * @Data
+ * @ToString
+ * @EqualsAndHashCode
+ * @EqualsAndHashCode(of = {"title", "body","userId","id"})
+ */
+
+@Data
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class UserDTO {
     private String title;
     private String body;
     private int userId;
     private int id;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
     @Override
     public boolean equals(Object ob) {
         if (!(ob instanceof UserDTO)) return false;
         UserDTO userDTO = (UserDTO) ob;
-        return Objects.equals(userDTO.getTitle(), title)
-                && Objects.equals(userDTO.getBody(), body)
-                && Objects.equals(userDTO.getUserId(), userId)
-                && Objects.equals(userDTO.getId(), id);
+        return Objects.equals(userDTO.title, title)
+                && Objects.equals(userDTO.body, body)
+                && Objects.equals(userDTO.userId, userId)
+                && Objects.equals(userDTO.id, id);
     }
 
     @Override

@@ -11,7 +11,6 @@ import java.lang.annotation.Target;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-@Lazy
 @Retention(RUNTIME)
 @Target({ElementType.FIELD, ElementType.TYPE})
 @PageFactoryFinder(FindBy.FindByBuilder.class)

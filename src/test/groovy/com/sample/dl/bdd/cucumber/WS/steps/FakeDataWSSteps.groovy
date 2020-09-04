@@ -53,7 +53,7 @@ class FakeDataWSSteps {
     def we_got_the_Response_with_body(String jsonBody) {
         UserDTO expected = parser.parseFromJson(jsonBody, UserDTO.class);
         UserDTO actual = parser.parseFromJson(response.getBodyAsString(), UserDTO.class);
-        Assert.assertEquals(expected, actual)
+        Assert.assertEquals(expected.toString(), actual.toString())
     }
 
 
