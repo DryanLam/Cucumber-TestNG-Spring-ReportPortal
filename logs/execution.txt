@@ -1,12 +1,10 @@
-2020-09-03 01:46:36 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
-2020-09-03 01:46:36 INFO c.s.d.b.c.UI.steps.FakeDataUISteps - i_navigate_to_home_page - I NAVIGATED TO HOME PAGE
-2020-09-03 01:46:36 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
-2020-09-03 01:46:36 INFO c.s.d.b.c.UI.pages.PageAction - getText - 404
-2020-09-03 01:46:36 INFO c.s.d.b.c.UI.pages.PageAction - getText - {}
-2020-09-03 02:16:56 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
-2020-09-03 02:16:56 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
-2020-09-03 02:16:56 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
-2020-09-03 02:19:23 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
-2020-09-03 02:19:23 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
-2020-09-03 02:19:23 INFO c.s.d.b.c.UI.pages.PageAction - getText - 404
-2020-09-03 02:19:23 INFO c.s.d.b.c.UI.pages.PageAction - getText - {}
+2020-09-04 11:15:00 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 11:15:00 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 11:15:00 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-04 11:32:31 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 11:32:31 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 11:32:31 INFO c.s.d.b.c.UI.pages.PageAction - getText - 404
+2020-09-04 11:32:31 INFO c.s.d.b.c.UI.pages.PageAction - getText - {}
+2020-09-04 11:39:53 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-04 11:39:54 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-04 11:39:54 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
