@@ -6,7 +6,7 @@ Feature: Web App
   Background: User is already on homepage
     Given I navigate to home page
 
-  @UI_Browsers_ty
+  @UI_Browsers
   Scenario Outline: I can see 3 key sells on homepage
     When I refresh the homepage
     Then The '<key-sell>' should be displayed correctly
@@ -28,6 +28,6 @@ Feature: Web App
     Examples:
       | http-method | request-type                | request-uri     | response-code | response-data |
       | GET         | SINGLE USER NOT FOUND       | /api/users/23   | 404           | {}            |
-#      | GET         | SINGLE <RESOURCE> NOT FOUND | /api/unknown/23 | 404           | {}            |
+      | GET         | SINGLE <RESOURCE> NOT FOUND | /api/unknown/23 | 404           | {}            |
 
 

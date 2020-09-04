@@ -24,22 +24,22 @@ class ReportService {
 //
 //    }
 
-    public static void resetService() {
+    static void resetService() {
         currentStepDefIndex = 0
         runTimeStatus = []
     }
 
     private static int currentStepDefIndex;
 
-    public static int getStepIndex() {
+    static int getStepIndex() {
         return currentStepDefIndex;
     }
 
-    public static void setStepIndex(int indexStep) {
+    static void setStepIndex(int indexStep) {
         currentStepDefIndex = indexStep;
     }
 
-    public static String getErrorMessage(Scenario scenario) {
+    static String getErrorMessage(Scenario scenario) {
         def lstSteps = scenario.delegate?.stepResults
         def errorMsg = lstSteps?.last().error?.stackTrace.toString()
         return errorMsg

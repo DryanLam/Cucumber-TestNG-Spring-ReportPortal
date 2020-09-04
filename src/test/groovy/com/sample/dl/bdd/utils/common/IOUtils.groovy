@@ -1,5 +1,8 @@
 package com.sample.dl.bdd.utils.common
 
+import groovy.util.logging.Slf4j
+
+@Slf4j
 class IOUtils {
     public static final String ENCODER = "UTF-8"
     public static final Integer HEADER_ROW = 0
@@ -59,7 +62,7 @@ class IOUtils {
             }
             rows
         }catch(e){
-            Helpers.displayMsg(e.message, 1)
+            log.info(e.message)
         }
     }
 
@@ -90,7 +93,7 @@ class IOUtils {
             }
             rows
         }catch(e){
-            Helpers.displayMsg(e.message, 1)
+            log.info(e.message)
         }
     }
 
@@ -113,12 +116,12 @@ class IOUtils {
         try{
             def fOut = new File(filePath)
             def pFile = fOut.getPath()
-            Helpers.log("Your output file is: ${pFile}")
+            log.info("Your output file is: ${pFile}")
             fOut.withWriter(ENCODER) { writer ->
                 writer.writeLine(dataRow)
             }
         }catch(e){
-            Helpers.displayMsg(e.message, 1)
+            log.info(e.message)
         }
     }
 

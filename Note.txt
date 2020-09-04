@@ -112,9 +112,39 @@ insideAStepMethod()
 
     Fixed: Use 4.2.0
 
+
+13. Lombok DTO issue:provider lombok.launch.annotationprocessorhider$claiming processor not found
+
+    Fixed:
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+            <source>${project.java.version}</source>
+            <target>${project.java.version}</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
+            <!--<compilerArgument>-proc:none</compilerArgument>-->
+            <annotationProcessors>
+                <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
+            </annotationProcessors>
+        </configuration>
+    </plugin>
+
+14. Lobok not mapping JsonObject
+    https://stackoverflow.com/questions/39381474/cant-make-jackson-and-lombok-work-together
+
+15. Issue commpare 2 object: [Open] https://github.com/rzwitserloot/lombok/issues/1642
+
+
 ??? mvn clean install -DskipTests
 
 CLI:
+    # UI default
     mvn clean test -Dtest.type=ws
-    mvn clean test -Dtest.type=ui
+    # UI ReportIO
+    mvn clean test -Dtest.name=ui
     mvn sonar:sonar
+
+    mvn clean test -Dtest.type=WS -Dtest.name=WSIO -Drp.launch=WS_TADP
+

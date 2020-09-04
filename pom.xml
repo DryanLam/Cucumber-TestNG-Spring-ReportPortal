@@ -12,18 +12,19 @@
     <properties>
         <!-- PROJECT CONFIG -->
         <test.type>UI</test.type>
+        <test.name>UI</test.name>
         <environment>UI-Endpoints</environment>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compile.encoding>UTF-8</maven.compile.encoding>
         <sonar.host.url>http://192.168.1.117:9000</sonar.host.url>
 
         <!-- LIB VERSION-->
+        <spring.version>5.2.8.RELEASE</spring.version>
         <cucumber.version>4.7.1</cucumber.version>
         <gherkin.version>5.1.0</gherkin.version>
         <bonigarcia.version>4.2.0</bonigarcia.version>
         <guava.version>29.0-jre</guava.version>
         <groovy.version>2.4.3</groovy.version>
-        <spring.version>5.2.8.RELEASE</spring.version>
         <selenium.version>3.141.59</selenium.version>
         <logback.version>1.2.3</logback.version>
         <rest.assured.version>4.2.0</rest.assured.version>
@@ -31,6 +32,10 @@
         <hamcrest.version>1.3</hamcrest.version>
         <assertj.version>3.12.2</assertj.version>
         <jayway.version>2.4.0</jayway.version>
+        <excel.version>4.1.2</excel.version>
+        <postgre.version>42.2.16</postgre.version>
+        <mysql.version>8.0.21</mysql.version>
+
     </properties>
 
     <repositories>
@@ -80,7 +85,6 @@
             <version>${cucumber.version}</version>
         </dependency>
 
-
         <!-- SPRING FRAMEWORK -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -101,6 +105,23 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+
+        <!--    DATABASE SUPPORT    -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgre.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
 
         <!-- JACKSON -->
@@ -144,7 +165,6 @@
             <version>${selenium.version}</version>
         </dependency>
 
-
         <!-- REST ASSURED -->
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -152,13 +172,12 @@
             <version>${rest.assured.version}</version>
         </dependency>
 
-
         <!-- JSON JAYWAY -->
         <dependency>
             <groupId>com.jayway.jsonpath</groupId>
             <artifactId>json-path</artifactId>
             <version>${jayway.version}</version>
-        </dependency> <!-- https://github.com/json-path/JsonPath s-->
+        </dependency> <!-- https://github.com/json-path/JsonPaths -->
 
         <!--	DRIVER AUTO CONTROL VERSION 	-->
         <dependency>
@@ -178,6 +197,39 @@
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+
+        <!--	EXCEL LIBS 	-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>${excel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>${excel.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml-schemas</artifactId>
+            <version>${excel.version}</version>
+        </dependency>
+        <!--    MUST FIXED   -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>ooxml-schemas</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <!--            <version>1.18.6</version>-->
+            <version>1.18.4</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 
@@ -202,21 +254,6 @@
                     <version>3.7.0.1746</version>
                 </plugin>
 
-                <!--                JACOCO COVERAGE-->
-                <!--                <plugin>-->
-                <!--                    <groupId>org.jacoco</groupId>-->
-                <!--                    <artifactId>jacoco-maven-plugin</artifactId>-->
-                <!--                    <version>0.8.4</version>-->
-                <!--                    <executions>-->
-                <!--                        <execution>-->
-                <!--                            <id>report</id>-->
-                <!--                            <goals>-->
-                <!--                                <goal>report-aggregate</goal>-->
-                <!--                            </goals>-->
-                <!--                            <phase>verify</phase>-->
-                <!--                        </execution>-->
-                <!--                </executions>-->
-                <!--                </plugin>-->
                 <!-- GROOVY JAVA -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -267,7 +304,7 @@
                             <environment>${environment}</environment>
                         </systemPropertyVariables>
                         <suiteXmlFiles>
-                            <suiteXmlFile>src/test/resources/${test.type}/${test.type}-testsuite.xml</suiteXmlFile>
+                            <suiteXmlFile>src/test/resources/${test.type}/${test.name}-testsuite.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
