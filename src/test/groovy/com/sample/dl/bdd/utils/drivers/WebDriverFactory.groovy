@@ -11,25 +11,24 @@ import java.util.concurrent.TimeUnit
 
 @Slf4j
 class WebDriverFactory {
-    private static ConfigHandler config
-    private static String browserType
-    private static WebDriver driver
+    private ConfigHandler config
+    private String browserType
+    private WebDriver driver
 
-    static WebDriver getDriver() {
+    WebDriver getDriver() {
         config = new ConfigHandler()
-        WebDriver methodLocalDriver
         browserType = config.getBrowserType()
         String gridHubServer = config.getGridHubServer()
 
         if ((gridHubServer != null) && !gridHubServer.isEmpty()) {
-            methodLocalDriver = getRemoteDriver()
+            driver = getRemoteDriver()
         } else {
-            methodLocalDriver = getLocalDriver()
+            driver = getLocalDriver()
         }
-        return methodLocalDriver
+        return driver
     }
 
-    private static void setBrowserTimeouts() {
+    void setBrowserTimeouts(WebDriver driver) {
         // Page loads timeout
         int timeout = config.getBrowserPageLoadTimeout()
         log.info(String.format("Set browser page load timeout to %d", timeout))
@@ -41,9 +40,10 @@ class WebDriverFactory {
     }
 
 
-    private static WebDriver getLocalDriver() {
+    private WebDriver getLocalDriver() {
         log.info("Creating local " + browserType + " Webdriver")
 
+        WebDriver driver
         DesiredCapabilities capabilities = new DesiredCapabilities()
 
         switch (browserType) {
@@ -61,14 +61,14 @@ class WebDriverFactory {
                 driver = LocalDriver.getFirefox(capabilities)
                 break;
         }
-        setBrowserTimeouts()
+        setBrowserTimeouts(driver)
         return driver
     }
 
-    private static WebDriver getRemoteDriver() {
+    private WebDriver getRemoteDriver() {
         String gridHubUrl
         DesiredCapabilities capabilities
-
+        WebDriver driver
         if (config.getGridHubServer().split(":").length == 2) {
             gridHubUrl = String.format("http://%s/wd/hub", config.getGridHubServer())
         } else {
@@ -102,7 +102,7 @@ class WebDriverFactory {
         } catch (final MalformedURLException e) {
             log.error(e.getStackTrace());
         }
-        setBrowserTimeouts()
+        setBrowserTimeouts(driver)
         return driver
     }
 }

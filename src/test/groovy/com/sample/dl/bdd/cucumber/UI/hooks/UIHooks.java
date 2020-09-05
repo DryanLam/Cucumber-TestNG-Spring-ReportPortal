@@ -5,13 +5,17 @@ import com.sample.dl.bdd.cucumber.UI.pages.PageAction;
 import com.sample.dl.contexts.AppContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(classes = {AppContext.class})
-@DirtiesContext
+//@DirtiesContext
 public class UIHooks {
+
+    @Autowired
+    WebDriver driver;
 
     @Autowired
     UIConfiguration configUI;
@@ -25,10 +29,10 @@ public class UIHooks {
         pageAction.openBrowser(configUI.getEndpoint());
     }
 
-    @After
-    public void tearDownScenario(){
-        pageAction.closeBrowser();
-    }
+//    @After
+//    public void tearDownScenario(){
+//        pageAction.closeBrowser();
+//    }
 }
 
 

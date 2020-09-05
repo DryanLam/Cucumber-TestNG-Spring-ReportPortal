@@ -28,6 +28,6 @@ Feature: Web App
     Examples:
       | http-method | request-type                | request-uri     | response-code | response-data |
       | GET         | SINGLE USER NOT FOUND       | /api/users/23   | 404           | {}            |
-#      | GET         | SINGLE <RESOURCE> NOT FOUND | /api/unknown/23 | 404           | {}            |
+      | GET         | SINGLE <RESOURCE> NOT FOUND | /api/unknown/23 | 404           | {}            |
 
 
