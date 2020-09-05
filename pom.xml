@@ -244,9 +244,6 @@
                         <target>1.8</target>
                         <compilerId>groovy-eclipse-compiler</compilerId>
                         <verbose>true</verbose>
-                        <annotationProcessors>
-                            <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
-                        </annotationProcessors>
                     </configuration>
                     <dependencies>
                         <dependency>
