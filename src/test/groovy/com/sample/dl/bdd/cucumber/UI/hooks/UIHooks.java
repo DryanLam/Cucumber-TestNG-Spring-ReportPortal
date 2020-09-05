@@ -29,10 +29,10 @@ public class UIHooks {
         pageAction.openBrowser(configUI.getEndpoint());
     }
 
-//    @After
-//    public void tearDownScenario(){
-//        pageAction.closeBrowser();
-//    }
+    @After
+    public void tearDownScenario(){
+        pageAction.closeBrowser();
+    }
 }
 
 

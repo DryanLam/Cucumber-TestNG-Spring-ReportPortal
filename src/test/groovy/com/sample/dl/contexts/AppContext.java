@@ -19,23 +19,15 @@ import java.util.Map;
                                "com.sample.dl.bdd.utils"})
 public class AppContext {
 
-    // TestScope support to clear the cache before each test run
-//    @Bean
-//    public TestScope testScope() {
-//        return new TestScope();
-//    }
-//
-//    // Create scope:test
-//    @Bean
-//    public CustomScopeConfigurer customScopeConfig() {
-//        CustomScopeConfigurer scopeConfig = new CustomScopeConfigurer();
-//        Map<String, Object> scopes = new HashMap<>();
-//        scopes.put("test", testScope());
-//        scopeConfig.setScopes(scopes);
-//        return scopeConfig;
-//    }
+    // Create scope:test
+    @Bean
+    public CustomScopeConfigurer customScopeConfig() {
+        CustomScopeConfigurer scopeConfig = new CustomScopeConfigurer();
+        scopeConfig.addScope("test", new TestScope());
+        return scopeConfig;
+    }
 
-//    @Scope("test")
+    @Scope("test")
     @Bean
     public WebDriver getDriver() {
         WebDriverFactory wF = new WebDriverFactory();

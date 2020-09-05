@@ -15,7 +15,7 @@ class WebDriverFactory {
     private String browserType
     private WebDriver driver
 
-    WebDriver getDriver() {
+    WebDriver createDriver() {
         config = new ConfigHandler()
         browserType = config.getBrowserType()
         String gridHubServer = config.getGridHubServer()
@@ -24,6 +24,13 @@ class WebDriverFactory {
             driver = getRemoteDriver()
         } else {
             driver = getLocalDriver()
+        }
+        return driver
+    }
+
+    WebDriver getDriver() {
+        if(driver == null){
+            return createDriver()
         }
         return driver
     }
