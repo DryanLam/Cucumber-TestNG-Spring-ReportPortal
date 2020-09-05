@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeSuite;
 @CucumberOptions(
 //        tags = {"@UI,@steptest"}, // OR
 //        tags = {"@UI","@API"},// AND
-        tags = {" @UI_Browsers"},
+        tags = {" @UI_Browsers_01"},
         features = {"src/test/groovy/com/sample/dl/bdd/cucumber/UI/features"},
 //        monochrome = true, // Much more readable
         strict = true, // Fail: Mark build success if build contains failed cases

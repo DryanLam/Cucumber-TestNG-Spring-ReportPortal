@@ -72,59 +72,11 @@ class PageAction {
         executeJS('arguments[0].scrollIntoView(true)',element)
     }
 
-
-
-//    def waitForPageLoad(){
-//        def currentTime = Calendar.getInstance().getTime()
-//        def endTime, count = 0
-//        use(TimeCategory) {	endTime = currentTime + timeOut.seconds	}
-//        def wait = true
-//        while (wait && !currentTime.after(endTime))
-//        {
-//            pauseToWait(1)
-//            def isCompleted = executeJavasSript("jQuery.active == 0",FailureHandling.OPTIONAL).toBoolean()
-//            if (isCompleted){
-//                wait = false
-//            }
-//            currentTime = Calendar.getInstance().getTime()
-//        }
-//    }
-//
-//    public boolean waitForJSandJQueryToLoad() {
-//
-//        WebDriverWait wait = new WebDriverWait(driver, 30);
-//
-//        // wait for jQuery to load
-//        ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
-//            @Override
-//            public Boolean apply(WebDriver ldriver) {
-//                try {
-//                    return ((Long)((JavascriptExecutor)ldriver()).executeScript("return jQuery.active") == 0);
-//                }
-//                catch (Exception e) {
-//                    // no jQuery present
-//                    return true;
-//                }
-//            }
-//        };
-//
-//        // wait for Javascript to load
-//        ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
-//            @Override
-//            public Boolean apply(WebDriver ldriver) {
-//                return ((JavascriptExecutor)ldriver()).executeScript("return document.readyState")
-//                        .toString().equals("complete");
-//            }
-//        };
-//
-//        return wait.until(jQueryLoad) && wait.until(jsLoad);
-//    }
-
     def waitForPageLoad() {
-        pause(Timeouts.SHORT_TIME)
+        pause(Timeouts.DEFAULT_TIME)
         ExpectedCondition<Boolean> pageLoadCompleted = new ExpectedCondition<Boolean>() {
             @Override
-            public Boolean apply(WebDriver _driver) {
+            Boolean apply(WebDriver _driver) {
                     return (Boolean) ((JavascriptExecutor) _driver).executeScript("return document.readyState")
                                                                     .toString()
                                                                     .equalsIgnoreCase("complete")
@@ -134,34 +86,7 @@ class PageAction {
     }
 
     def pause(int time){
-        Thread.sleep(time)
+        Thread.sleep(time*1000)
     }
 
-//    boolean waitForPageLoad() {
-//        ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
-//            @Override
-//            public Boolean apply(WebDriver _driver) {
-//                try {
-//                    return (Boolean) ((JavascriptExecutor) _driver).executeScript("return (window.jQuery != null) && (jQuery.active === 0);");
-//                }
-//                catch (Exception e) {
-//                    // no jQuery present
-//                    return true;
-//                }
-//            }
-//        };
-//        return wait.until(jQueryLoad)
-//    }
-
-
-
-//    public static ExpectedCondition<Boolean> jQueryAJAXCallsHaveCompleted() {
-//        return new ExpectedCondition<Boolean>() {
-//
-//            @Override
-//            public Boolean apply(WebDriver driver) {
-//                return (Boolean) ((JavascriptExecutor) driver).executeScript("return (window.jQuery != null) && (jQuery.active === 0);");
-//            }
-//        };
-//    }
 }

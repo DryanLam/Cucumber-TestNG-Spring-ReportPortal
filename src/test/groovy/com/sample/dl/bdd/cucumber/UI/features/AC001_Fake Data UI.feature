@@ -18,7 +18,7 @@ Feature: Web App
       | Always-on      |
 
 
-  @UI_Browsers
+  @UI_Browsers_01
   Scenario Outline: I can get empty responses
     When I click on '<http-method>' of '<request-type>' at Give it a try
     Then The request '<request-uri>' is display on the left column
@@ -28,6 +28,6 @@ Feature: Web App
     Examples:
       | http-method | request-type                | request-uri     | response-code | response-data |
       | GET         | SINGLE USER NOT FOUND       | /api/users/23   | 404           | {}            |
-      | GET         | SINGLE <RESOURCE> NOT FOUND | /api/unknown/23 | 404           | {}            |
+#      | GET         | SINGLE <RESOURCE> NOT FOUND | /api/unknown/23 | 404           | {}            |
 
 

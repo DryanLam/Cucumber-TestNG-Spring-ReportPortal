@@ -186,3 +186,48 @@
 2020-09-05 05:25:01 INFO c.s.d.bdd.cucumber.WS.hooks.WSHooks - setUpScenario - Test WS
 2020-09-05 05:25:16 INFO c.s.d.bdd.cucumber.WS.hooks.WSHooks - setUpScenario - Test WS
 2020-09-05 05:25:47 INFO c.s.d.bdd.cucumber.WS.hooks.WSHooks - setUpScenario - Test WS
+2020-09-05 10:35:45 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-05 10:35:51 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-05 10:35:51 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-05 10:35:56 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-05 10:35:56 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-05 10:35:56 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-05 10:37:34 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-05 10:37:38 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-05 10:37:38 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-05 10:37:44 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-05 10:37:44 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-05 10:37:44 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-05 10:39:29 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-05 10:39:33 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-05 10:39:33 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-05 10:39:40 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-05 10:39:40 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-05 10:39:40 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-05 10:41:50 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-05 10:41:54 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-05 10:41:54 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-05 10:41:59 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-05 10:41:59 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-05 10:42:04 INFO c.s.d.b.c.UI.pages.PageAction - getText - 404
+2020-09-05 10:42:04 INFO c.s.d.b.c.UI.pages.PageAction - getText - {}
+2020-09-05 10:43:42 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-05 10:43:46 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-05 10:43:46 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-05 10:43:52 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-05 10:43:52 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-05 10:43:52 INFO c.s.d.b.c.UI.pages.PageAction - getText - 200
+2020-09-05 10:44:35 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-05 10:44:39 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-05 10:44:39 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-05 10:44:44 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-05 10:45:03 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-05 10:45:03 INFO c.s.d.b.c.UI.pages.PageAction - getText - 404
+2020-09-05 10:45:03 INFO c.s.d.b.c.UI.pages.PageAction - getText - {}
+2020-09-05 10:45:31 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-05 10:45:35 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser page load timeout to 60
+2020-09-05 10:45:35 INFO c.s.d.b.u.drivers.WebDriverFactory - setBrowserTimeouts - Set browser script timeout to 60
+2020-09-05 10:45:39 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-05 10:45:41 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/users/23
+2020-09-05 10:45:42 INFO c.s.d.b.c.UI.pages.PageAction - getText - 404
+2020-09-05 10:45:42 INFO c.s.d.b.c.UI.pages.PageAction - getText - {}

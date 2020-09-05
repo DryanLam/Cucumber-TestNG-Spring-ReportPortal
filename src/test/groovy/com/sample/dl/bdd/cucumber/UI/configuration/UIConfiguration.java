@@ -12,14 +12,8 @@ public class UIConfiguration {
     @Value("${ui.app.url}")
     private String appEndpoint;
 
-    @Value("${ui.log.level}")
-    private String logLevel;
-
     public String getEndpoint() {
         return appEndpoint;
-    }
-    public String getLogLevel() {
-        return logLevel;
     }
 
 

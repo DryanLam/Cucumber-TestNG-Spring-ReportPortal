@@ -12,12 +12,12 @@ class Assert {
      *
      **/
     enum AssertionMessage {
-        EQUAL_ERROR_MESSAGE("\n*** ERROR: ''{0}'' Equal Assertion. \nExpected: ''{1}''. \nActual: " + "''{2}''."),
-        NOT_EQUAL_ERROR_MESSAGE("\n*** ERROR: ''{0}'' Not Equal Assertion. \nExpected: ''{1}''. \nActual: " + "''{2}''."),
-        LIST_EQUAL_ERROR_MESSAGE("\n*** ERROR: ''{0}'' List Equal Assertion.\nExpected: ''{1}''.\nGot     : ''{2}''.\nMissing elements: ''{3}''.\nExtra elements  : ''{4}''"),
-        LIST_CONTAIN_ERROR_MESSAGE("\n*** ERROR: ''{0}'' List Contain Assertion.\nExpected:\n {1}.\nGot:\n {2}.\nMissing elements: {3}"),
-        LIST_NOT_CONTAIN_ERROR_MESSAGE("*** ERROR: ''{0}'' List Not Contain Assertion.\nExpected:\n {1}.\nGot:\n {2}.\nCommon elements: {3}"),
-        LIST_NOT_SORTED("*** ERROR: ''{0}'' List Not Sorted Assertion.\nExpected order: {1}.\nGot:\n {2}.");
+        EQUAL_ERROR_MESSAGE("\n*** ERROR: Equal Assertion. \nExpected: ''{0}''. \nActual: " + "''{1}''."),
+        NOT_EQUAL_ERROR_MESSAGE("\n*** ERROR: Not Equal Assertion. \nExpected: ''{0}''. \nActual: " + "''{1}''."),
+        LIST_EQUAL_ERROR_MESSAGE("\n*** ERROR: List Equal Assertion.\nExpected: ''{0}''.\nGot     : ''{1}''.\nMissing elements: ''{2}''.\nExtra elements  : ''{4}''"),
+        LIST_CONTAIN_ERROR_MESSAGE("\n*** ERROR: List Contain Assertion.\nExpected:\n {0}.\nGot:\n {1}.\nMissing elements: {2}"),
+        LIST_NOT_CONTAIN_ERROR_MESSAGE("*** ERROR:  List Not Contain Assertion.\nExpected:\n {0}.\nGot:\n {1}.\nCommon elements: {2}"),
+        LIST_NOT_SORTED("*** ERROR: List Not Sorted Assertion.\nExpected order: {0}.\nGot:\n {1}.");
 
         private String value;
         AssertionMessage(String value) {
