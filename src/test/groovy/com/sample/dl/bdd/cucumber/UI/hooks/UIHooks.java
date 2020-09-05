@@ -7,11 +7,15 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
+//import static io.cucumber.spring.CucumberTestContext.SCOPE_CUCUMBER_GLUE;
 
 @ContextConfiguration(classes = {AppContext.class})
 //@DirtiesContext
+
+@Scope("cucumber-glue")
 public class UIHooks {
 
     @Autowired

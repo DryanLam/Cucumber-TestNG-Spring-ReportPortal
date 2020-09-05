@@ -23,12 +23,12 @@ public class AppContext {
     @Bean
     public CustomScopeConfigurer customScopeConfig() {
         CustomScopeConfigurer scopeConfig = new CustomScopeConfigurer();
-        scopeConfig.addScope("test", new TestScope());
+        scopeConfig.addScope("cucumber-glue", new TestScope());
         return scopeConfig;
     }
 
-    @Scope("test")
-    @Bean
+    @Scope("cucumber-glue")
+    @Bean(name = "webdriver", destroyMethod = "quit")
     public WebDriver getDriver() {
         WebDriverFactory wF = new WebDriverFactory();
         return wF.getDriver();

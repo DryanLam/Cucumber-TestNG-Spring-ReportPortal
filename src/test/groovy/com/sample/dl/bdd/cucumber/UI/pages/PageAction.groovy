@@ -10,11 +10,13 @@ import org.openqa.selenium.support.ui.ExpectedCondition
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.context.annotation.Scope
 import org.springframework.stereotype.Component
 import java.util.concurrent.TimeUnit
 
 @Component
 @Slf4j
+@Scope("cucumber-glue")
 class PageAction {
 
     @Autowired

@@ -5,10 +5,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 @IgnoreScan
+@Scope("cucumber-glue")
 public class PageObjectBeanPostProcessor implements BeanPostProcessor {
 
     @Autowired
