@@ -1,5 +1,7 @@
-package com.sample.dl.contexts.annotations;
+package com.sample.dl.bdd.cucumber.UI.configuration;
 
+import com.sample.dl.contexts.annotations.IgnoreScan;
+import com.sample.dl.contexts.annotations.PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.BeansException;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @IgnoreScan
-@Scope("cucumber-glue")
+//@Scope("cucumber-glue")
 public class PageObjectBeanPostProcessor implements BeanPostProcessor {
 
     @Autowired

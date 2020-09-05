@@ -15,11 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration(classes = {AppContext.class})
 //@DirtiesContext
 
-@Scope("cucumber-glue")
 public class UIHooks {
-
-    @Autowired
-    WebDriver driver;
 
     @Autowired
     UIConfiguration configUI;

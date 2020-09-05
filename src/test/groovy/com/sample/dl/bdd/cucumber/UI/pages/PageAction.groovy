@@ -14,9 +14,9 @@ import org.springframework.context.annotation.Scope
 import org.springframework.stereotype.Component
 import java.util.concurrent.TimeUnit
 
+@Scope("cucumber-glue")
 @Component
 @Slf4j
-@Scope("cucumber-glue")
 class PageAction {
 
     @Autowired

@@ -28,10 +28,15 @@ class WebDriverFactory {
         return driver
     }
 
+//    WebDriver getDriver(WebDriver abc) {
+//        if(abc == null || abc?.sessionId == null){
+//            abc = createDriver()
+//        }
+//        return abc
+//    }
+
     WebDriver getDriver() {
-        if(driver == null){
-            return createDriver()
-        }
+        driver = driver ?: createDriver()
         return driver
     }
 
