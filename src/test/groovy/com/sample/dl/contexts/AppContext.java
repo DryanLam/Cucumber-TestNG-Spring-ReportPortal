@@ -37,6 +37,7 @@ public class AppContext {
     @Bean(name = "webdriver", destroyMethod = "quit")
     public WebDriver getDriver() {
         WebDriverFactory wF = new WebDriverFactory();
+            abc = wF.getDriver();
 
 //        if (abc == null) {
 //            abc = wF.getDriver();
@@ -44,10 +45,10 @@ public class AppContext {
 //            SessionId sessionid = ((RemoteWebDriver) abc).getSessionId();
 //            System.out.println(sessionid);
 //            if(sessionid == null){
-//                return wF.getDriver();
+//                abc = wF.getDriver();
 //            }
 //        }
 //        return abc;
-        return wF.getDriver();
+        return abc;
     }
 }

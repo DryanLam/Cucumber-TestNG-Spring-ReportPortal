@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @IgnoreScan
-//@Scope("cucumber-glue")
+@Scope("cucumber-glue")
 public class PageObjectBeanPostProcessor implements BeanPostProcessor {
 
     @Autowired

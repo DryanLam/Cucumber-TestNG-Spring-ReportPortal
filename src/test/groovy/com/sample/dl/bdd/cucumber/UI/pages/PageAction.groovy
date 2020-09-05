@@ -4,6 +4,8 @@ import com.sample.dl.bdd.utils.common.LogManager
 import com.sample.dl.bdd.utils.common.Timeouts
 import groovy.util.logging.Slf4j
 import org.openqa.selenium.JavascriptExecutor
+import org.openqa.selenium.OutputType
+import org.openqa.selenium.TakesScreenshot
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.ExpectedCondition
@@ -89,6 +91,10 @@ class PageAction {
 
     def pause(int time){
         Thread.sleep(time*1000)
+    }
+
+    byte[] screenShot(){
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)
     }
 
 }
