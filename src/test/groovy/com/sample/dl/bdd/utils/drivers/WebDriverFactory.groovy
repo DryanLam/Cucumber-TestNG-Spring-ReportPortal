@@ -7,9 +7,13 @@ import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.remote.DesiredCapabilities
 import org.openqa.selenium.remote.RemoteWebDriver
+import org.openqa.selenium.remote.SessionId
+import org.springframework.stereotype.Service
+
 import java.util.concurrent.TimeUnit
 
 @Slf4j
+@Service
 class WebDriverFactory {
     private ConfigHandler config
     private String browserType
@@ -28,16 +32,19 @@ class WebDriverFactory {
         return driver
     }
 
-//    WebDriver getDriver(WebDriver abc) {
-//        if(abc == null || abc?.sessionId == null){
-//            abc = createDriver()
-//        }
-//        return abc
-//    }
-
     WebDriver getDriver() {
-        driver = driver ?: createDriver()
+        if (!isValidDriver(driver)) {
+            driver = createDriver()
+        }
         return driver
+    }
+
+    boolean isValidDriver(WebDriver driver) {
+        SessionId session
+        if (driver) {
+            session = ((RemoteWebDriver) driver).getSessionId();
+        }
+        return driver && session
     }
 
     void setBrowserTimeouts(WebDriver driver) {

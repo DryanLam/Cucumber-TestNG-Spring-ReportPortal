@@ -1,30 +1,40 @@
 package com.sample.dl.bdd.cucumber.UI.pages
 
-import com.sample.dl.bdd.utils.common.LogManager
+
 import com.sample.dl.bdd.utils.common.Timeouts
+import com.sample.dl.bdd.utils.drivers.WebDriverFactory
+import com.sample.dl.contexts.annotations.PageObject
 import groovy.util.logging.Slf4j
-import org.openqa.selenium.JavascriptExecutor
-import org.openqa.selenium.OutputType
-import org.openqa.selenium.TakesScreenshot
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.WebElement
+import org.openqa.selenium.*
+import org.openqa.selenium.support.PageFactory
 import org.openqa.selenium.support.ui.ExpectedCondition
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.context.annotation.Scope
+import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Component
+
 import java.util.concurrent.TimeUnit
 
-@Scope("cucumber-glue")
 @Component
 @Slf4j
 class PageAction {
 
     @Autowired
-    protected WebDriver driver
+    private ApplicationContext appContext;
 
+    @Autowired
+    WebDriverFactory driverFactory;
+
+    protected WebDriver driver
     protected static WebDriverWait wait
+
+    def initPageFactory(){
+        driver = driverFactory.getDriver()
+        def beans = appContext.getBeansWithAnnotation(PageObject.class);
+        beans.each { bean -> PageFactory.initElements(driver, bean.value)}
+        println(beans.toString())
+    }
 
     def openBrowser(String url){
         wait = new WebDriverWait(driver,Timeouts.LONG_TIME)
@@ -34,7 +44,7 @@ class PageAction {
     }
 
     def closeBrowser(){
-        driver.close()
+        driver.quit()
     }
 
     def navigateTo(String url){

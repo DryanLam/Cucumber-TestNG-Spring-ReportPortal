@@ -6,17 +6,12 @@ import com.sample.dl.contexts.AppContext;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.test.context.ContextConfiguration;
-
-//@DirtiesContext
-
 
 @ContextConfiguration(classes = {AppContext.class})
 public class UIHooks {
+
 
     @Autowired
     UIConfiguration configUI;
@@ -26,6 +21,7 @@ public class UIHooks {
 
     @Before
     public void setUpScenario() {
+        pageAction.initPageFactory();
 //        ReportService.resetService();
         pageAction.openBrowser(configUI.getEndpoint());
     }
@@ -33,7 +29,6 @@ public class UIHooks {
     @After
     public void tearDownScenario(Scenario scenario){
         tearDown(scenario);
-        pageAction.closeBrowser();
     }
 
     private void tearDown(Scenario scenario) {
@@ -41,6 +36,7 @@ public class UIHooks {
             final byte[] screenshot = pageAction.screenShot();
             scenario.embed(screenshot, "image/png");
         }
+        pageAction.closeBrowser();
     }
 }
 

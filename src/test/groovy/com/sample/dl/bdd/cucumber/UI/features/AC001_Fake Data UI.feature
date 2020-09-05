@@ -18,7 +18,7 @@ Feature: Web App
       | Always-on      |
 
 
-  @UI_Browsers_01
+  @UI_Browsers
   Scenario Outline: I can get empty responses
     When I click on '<http-method>' of '<request-type>' at Give it a try
     Then The request '<request-uri>' is display on the left column

@@ -7,7 +7,8 @@ import org.slf4j.LoggerFactory
 class LogManager {
 
     private final static List PERMIT_LEVELS = Arrays.asList("INFO", "WARN", "ERROR");
-
+    private final static LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory()
+    private static ch.qos.logback.classic.Logger log
     /**
      * Only PERMIT_LEVEL can populate the log level
      **/
@@ -15,12 +16,15 @@ class LogManager {
         def config = new ConfigHandler()
         def logLevel = config.getLogLevel()
 
-        LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory()
         if (!PERMIT_LEVELS.any { it.equalsIgnoreCase(logLevel) }) {
             loggerContext.stop()
         } else {
-            ch.qos.logback.classic.Logger logger = loggerContext.getLogger(this.class)
-            logger.setLevel(Level.toLevel(logLevel))
+            log = loggerContext.getLogger(this.class)
+            log.setLevel(Level.toLevel(logLevel))
         }
+    }
+
+    static void info(String msg) {
+        log.info(msg)
     }
 }
