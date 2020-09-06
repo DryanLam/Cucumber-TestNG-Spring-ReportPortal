@@ -93,3 +93,11 @@ w
 Gsrc/test/groovy/com/sample/dl/bdd/utils/exceptions/TestException.groovy,0\e\0e2c28fb39db92aad4a21562ed26e1f1425579ea
 M
 src/test/java/BaseClasse.java,6\3\6371569d6ce783b70bddcd3ea34b6a8047df6ed2
+O
+docker/sonar/docker-compose.yml,3\f\3fedc3af396175576cbc99f9bb7d726144a1899a
+t
+Dsrc/test/groovy/com/sample/dl/contexts/dbconfig/DBConfiguration.java,3\e\3ec79395c8fa7f09540ec42bd446bfd26e9a4170
+R
+"docker/postgres/docker-compose.yml,c\4\c40588a6516011181d74d44176e377bf8cbfb04b
+k
+;src/test/groovy/com/sample/dl/bdd/utils/db/DBManager.groovy,0\7\074683813a3588ec901b7fc8e62c2a03af019862
