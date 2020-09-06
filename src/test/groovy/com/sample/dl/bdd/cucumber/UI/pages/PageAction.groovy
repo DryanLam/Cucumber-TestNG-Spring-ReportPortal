@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Component
-
 import java.util.concurrent.TimeUnit
 
 @Component

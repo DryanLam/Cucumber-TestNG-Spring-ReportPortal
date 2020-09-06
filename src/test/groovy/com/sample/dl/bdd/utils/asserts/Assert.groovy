@@ -7,6 +7,7 @@ import java.text.MessageFormat
 
 @Service
 class Assert {
+
     /**
      * This enum is to generate exception message
      *
@@ -16,8 +17,6 @@ class Assert {
         NOT_EQUAL_ERROR_MESSAGE("\n*** ERROR: Not Equal Assertion. \nExpected: ''{0}''. \nActual: " + "''{1}''."),
         LIST_EQUAL_ERROR_MESSAGE("\n*** ERROR: List Equal Assertion.\nExpected: ''{0}''.\nGot     : ''{1}''.\nMissing elements: ''{2}''.\nExtra elements  : ''{4}''"),
         LIST_CONTAIN_ERROR_MESSAGE("\n*** ERROR: List Contain Assertion.\nExpected:\n {0}.\nGot:\n {1}.\nMissing elements: {2}"),
-        LIST_NOT_CONTAIN_ERROR_MESSAGE("*** ERROR:  List Not Contain Assertion.\nExpected:\n {0}.\nGot:\n {1}.\nCommon elements: {2}"),
-        LIST_NOT_SORTED("*** ERROR: List Not Sorted Assertion.\nExpected order: {0}.\nGot:\n {1}.");
 
         private String value;
         AssertionMessage(String value) {
@@ -25,6 +24,7 @@ class Assert {
         }
         String getValue() {value}
     }
+
 
     /**
      * Assert expected result with actual result
@@ -38,6 +38,7 @@ class Assert {
         }
     }
 
+
     /**
      * Assert the result is true boolean
      * @param value boolean
@@ -45,6 +46,7 @@ class Assert {
     static def assertTrue(def value){
         assertEquals(true,value)
     }
+
 
     /**
      * Assert two list and check isSort if needed

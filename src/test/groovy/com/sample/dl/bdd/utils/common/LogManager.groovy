@@ -5,7 +5,6 @@ import ch.qos.logback.classic.LoggerContext
 import org.slf4j.LoggerFactory
 
 class LogManager {
-
     private final static List PERMIT_LEVELS = Arrays.asList("INFO", "WARN", "ERROR");
     private final static LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory()
     private static ch.qos.logback.classic.Logger log
@@ -21,9 +20,5 @@ class LogManager {
             log = loggerContext.getLogger(this.class)
             log.setLevel(Level.toLevel(logLevel))
         }
-    }
-
-    static void info(String msg) {
-        log.info(msg)
     }
 }

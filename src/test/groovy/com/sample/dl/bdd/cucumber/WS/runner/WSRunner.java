@@ -7,9 +7,6 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.BeforeSuite;
 
 @CucumberOptions(
-//        tags = {"@WS_Regression"},
-        tags = {"@API"},
-        features = {"src/test/groovy/com/sample/dl/bdd/cucumber/WS/features"},
         strict = true,
         plugin = {
                 "json:target/result.json",
@@ -17,16 +14,15 @@ import org.testng.annotations.BeforeSuite;
         glue = {
                 "com.sample.dl.bdd.cucumber.WS.hooks",
                 "com.sample.dl.bdd.cucumber.WS.steps"
-        }
+        },
+        features = {"src/test/groovy/com/sample/dl/bdd/cucumber/WS/features"},
+        tags = {"@API"}
 )
 
 public class WSRunner extends AbstractTestNGCucumberTests {
+
         @BeforeSuite()
         public void beforeSuite(){
                 LogManager.setLogLevel();
-
-                System.out.println("====================================================");
-                System.out.println("             Start UI Automation Test               ");
-                System.out.println("====================================================");
         }
 }

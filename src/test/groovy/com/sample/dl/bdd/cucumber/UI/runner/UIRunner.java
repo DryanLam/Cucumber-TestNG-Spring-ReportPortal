@@ -8,39 +8,28 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 @CucumberOptions(
-//        tags = {"@UI,@steptest"}, // OR
-//        tags = {"@UI","@API"},// AND
-        tags = {" @UI_Browsers"},
-        features = {"src/test/groovy/com/sample/dl/bdd/cucumber/UI/features"},
-//        monochrome = true, // Much more readable
-        strict = true, // Fail: Mark build success if build contains failed cases
+        monochrome = true,
         plugin = {
                 "json:target/result.json",
         },
-//        dryRun = true,
         glue = {
                 "com.sample.dl.bdd.cucumber.UI.hooks",
                 "com.sample.dl.bdd.cucumber.UI.steps"
-        }
+        },
+        features = {"src/test/groovy/com/sample/dl/bdd/cucumber/UI/features"},
+        tags = {" @UI_Browsers"}
 )
 public class UIRunner extends AbstractTestNGCucumberTests {
 
     @BeforeSuite()
     public void beforeSuite() {
         LogManager.setLogLevel();
+
         DataDrivenHandler data = DataDrivenHandler.getInstance();
-
         data.getValue("$..email");
-
-        LogManager.info("====================================================");
-        LogManager.info("             Start UI Automation Test               ");
-        LogManager.info("====================================================");
     }
 
     @AfterSuite()
     public void AfterSuite() {
-        LogManager.info("====================================================");
-        LogManager.info("             End UI Automation Test                 ");
-        LogManager.info("====================================================");
     }
 }

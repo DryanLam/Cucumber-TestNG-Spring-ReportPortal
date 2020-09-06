@@ -12,7 +12,6 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration(classes = {AppContext.class})
 public class UIHooks {
 
-
     @Autowired
     UIConfiguration configUI;
 
@@ -22,7 +21,6 @@ public class UIHooks {
     @Before
     public void setUpScenario() {
         pageAction.initPageFactory();
-//        ReportService.resetService();
         pageAction.openBrowser(configUI.getEndpoint());
     }
 

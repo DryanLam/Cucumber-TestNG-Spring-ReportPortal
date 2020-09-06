@@ -30,7 +30,6 @@ class FakeDataUISteps {
         def isExisted = homePage.isKeySellExist(keySell)
         log.info(keySell)
         Assert.assertTrue(isExisted)
-
     }
 
     @Given(/^I click on '(.+)' of '(.+)' at Give it a try$/)

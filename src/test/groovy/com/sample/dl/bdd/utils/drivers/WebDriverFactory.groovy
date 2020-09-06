@@ -10,12 +10,11 @@ import org.openqa.selenium.remote.DesiredCapabilities
 import org.openqa.selenium.remote.RemoteWebDriver
 import org.openqa.selenium.remote.SessionId
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.stereotype.Service
-
+import org.springframework.stereotype.Component
 import java.util.concurrent.TimeUnit
 
+@Component
 @Slf4j
-@Service
 class WebDriverFactory {
 
     @Value('${browser.test.type}')

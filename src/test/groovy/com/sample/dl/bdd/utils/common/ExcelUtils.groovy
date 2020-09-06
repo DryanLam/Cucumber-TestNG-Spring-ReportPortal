@@ -8,11 +8,11 @@ import org.apache.poi.ss.usermodel.Workbook
 import org.apache.poi.ss.usermodel.WorkbookFactory
 import org.springframework.stereotype.Service
 
-@Slf4j
 @Service
+@Slf4j
 class ExcelUtils {
 
-    // Support for multi-workbook
+    // Support for multi-workbook types
     private Workbook wb
     private Sheet wbSheet
     private Row wbRow
@@ -20,11 +20,11 @@ class ExcelUtils {
 
     /**
      * This method helps to prepare Excel file in a dedicated folder
-     * @param fileName		Absolute excel file
-     * @param sheetName		Name of excel sheet or sheet index
-     * @param rowNum		Row number
-     * @param colNum		Column number
-     * @return String		Value of cell
+     * @param fileName Absolute excel file
+     * @param sheetName Name of excel sheet or sheet index
+     * @param rowNum Row number
+     * @param colNum Column number
+     * @return String        Value of cell
      */
     def readFile(String fileName, String sheetName, int rowNum, int colNum) {
         def srcDir = System.getProperty("user.dir") + "/src/test/groovy/com/sample/dl/bdd/data/"
@@ -35,13 +35,14 @@ class ExcelUtils {
         return getCellValue(wbRow, colNum)
     }
 
+
     /**
      * This method is used to set data to an existing excel file by row number & column index
-     * @param fileName      Name of excel file
-     * @param sheetName     Name of sheet
-     * @param rowNum        Row number calculated from header(Header row is 0, next data row is 1)
-     * @param colNum        Column number
-     * @param value         Data value to be set in cell
+     * @param fileName Name of excel file
+     * @param sheetName Name of sheet
+     * @param rowNum Row number calculated from header(Header row is 0, next data row is 1)
+     * @param colNum Column number
+     * @param value Data value to be set in cell
      */
     def updateFile(String fileName, String sheetName, int rowNum, int colNum, def value) {
         def srcDir = System.getProperty("user.dir") + "/src/test/groovy/com/sample/dl/bdd/data/"
@@ -56,30 +57,30 @@ class ExcelUtils {
 
     /**
      * This method is used to set a row data with multi-column name to an existing excel file by row number & column index
-     * @param fileName      Name of excel file
-     * @param sheetName     Name of sheet
-     * @param rowData       The data information will be set into cell
+     * @param fileName Name of excel file
+     * @param sheetName Name of sheet
+     * @param rowData The data information will be set into cell
      * Data sample:
      *   inputData = [rowNum: 1, rowData: [[colName: "Transfer", colValue: "ABC"],[colName: "Date", colValue: "ABC"]]]
      *
-     **/
-    def updateDataRow(def fileName, String sheetName, def inputData){
+     * */
+    def updateDataRow(def fileName, String sheetName, def inputData) {
         def srcDir = System.getProperty("user.dir") + "/src/test/groovy/com/sample/dl/bdd/data/"
         def srcFile = srcDir + fileName
         wb = openWorkbook(srcFile)
         wbSheet = getSheet(wb, sheetName)
         wbRow = getRow(wbSheet, inputData.rowNum)
         def items = inputData.rowData
-        items.each { item -> setCell(item.colName, item.colValue)}
+        items.each { item -> setCell(item.colName, item.colValue) }
         saveWorkbook(wb, srcFile)
     }
 
 
     /**
      * This method is used to set a row data with multi-column name to an existing excel file by row number & column index
-     * @param fileName      Name of Excel file
-     * @param sheetName     The name of sheet
-     * @param rowData       The data information will be set into cell
+     * @param fileName Name of Excel file
+     * @param sheetName The name of sheet
+     * @param rowData The data information will be set into cell
      * Data sample:
      *    lstData = [
      * 					 [rowNum: 1, rowData: [[colName: "Transfer", colValue: "ABC"],[colName: "Date", colValue: "ABC"]]],
@@ -100,7 +101,6 @@ class ExcelUtils {
         }
         saveWorkbook(wb, srcFile)
     }
-
 
 
     /**
@@ -162,6 +162,10 @@ class ExcelUtils {
         return row
     }
 
+
+    /**
+     * Get cell value by column index
+     */
     private def getCellValue(Row row, int idxCol) {
         try {
             def cell = row.getCell(idxCol)
@@ -180,6 +184,7 @@ class ExcelUtils {
             log.info("- Error --- Have problem on getting cell value. Message: ${e.getMessage()}")
         }
     }
+
 
     /**
      * Get column index by column name
@@ -204,9 +209,9 @@ class ExcelUtils {
      * Save workbook to excel file
      */
     private def saveWorkbook(Workbook workbook, String filePath) {
+        def wbFOS = new FileOutputStream(wbFile)
         try {
             File wbFile = new File(filePath)
-            def wbFOS = new FileOutputStream(wbFile)
             workbook.write(wbFOS)
             wbFOS.flush()
             wbFOS.close()
@@ -237,11 +242,12 @@ class ExcelUtils {
         }
     }
 
+
     /**
      * Set value to cell by column name
      * after initializing wbSheet & wbRow
      */
-    private def setCell(String colName, def value){
+    private def setCell(String colName, def value) {
         def colIndex = getColIndexByName(wbSheet, colName)
         setCell(wbRow, colIndex, value)
     }

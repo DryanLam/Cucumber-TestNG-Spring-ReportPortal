@@ -4,7 +4,6 @@ import com.sample.dl.bdd.utils.ws.BaseGateway;
 import com.sample.dl.bdd.utils.ws.WSResponse;
 import io.restassured.filter.cookie.CookieFilter;
 import io.restassured.http.ContentType;
-import io.restassured.http.Cookies;
 import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

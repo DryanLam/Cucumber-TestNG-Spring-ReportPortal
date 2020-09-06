@@ -7,6 +7,9 @@ class ConfigHandler {
 
     private static Properties prop
 
+    /**
+     * Initial config.properties file
+     */
     static ConfigHandler init(){
         try{
             prop = new Properties();
@@ -21,6 +24,7 @@ class ConfigHandler {
     static String getLogLevel(){
         prop.getProperty("log.level")
     }
+
 
     static String getDataTestFolder(){
         prop.getProperty("data.test.folder")

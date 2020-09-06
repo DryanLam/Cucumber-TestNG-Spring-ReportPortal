@@ -12,7 +12,6 @@ import groovy.util.logging.Slf4j
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.DirectoryFileFilter
 import org.apache.commons.io.filefilter.RegexFileFilter
-
 import java.nio.file.Path
 import java.nio.file.Paths
 
@@ -57,11 +56,6 @@ class DataDrivenHandler {
      * Ex: getJsonValue(jsonString, "\$..data")
      */
 
-//    def queryPath(def jsonPath){
-//        DocumentContext dataContext = JsonPath.parse(jsonString)
-//        dataContext.read(jsonPath)
-//    }
-
     /*-----------------       Support read data as DTO -------------------*/
 
     public String getValue(String jsonPath) {
@@ -87,6 +81,7 @@ class DataDrivenHandler {
         return dataDrivenObject.read(jsonPath, typeRef)
     }
 
+
     /**
      * File reader json in test folder
      */
@@ -108,6 +103,7 @@ class DataDrivenHandler {
         }
         return data
     }
+
 
     /**
      * Read all json files only

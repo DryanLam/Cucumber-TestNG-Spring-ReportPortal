@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 //@PropertySource("classpath:UI/${environment}.properties")
-//@PropertySource("classpath:UI/UI-Endpoints.properties")
 @Configuration
 @PropertySource({
         "classpath:UI/UI-Endpoints.properties",
@@ -19,6 +18,4 @@ public class UIConfiguration {
     public String getEndpoint() {
         return appEndpoint;
     }
-
-
 }

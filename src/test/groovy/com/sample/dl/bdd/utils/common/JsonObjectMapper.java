@@ -1,7 +1,6 @@
 package com.sample.dl.bdd.utils.common;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sample.dl.bdd.utils.exceptions.TestException;
