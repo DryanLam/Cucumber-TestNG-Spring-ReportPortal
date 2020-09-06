@@ -18,16 +18,16 @@ Feature: Web App
       | Always-on      |
 
 
-  @UI_Browsers_01
+  @UI_Browsers
   Scenario Outline: I can get empty responses
     When I click on '<http-method>' of '<request-type>' at Give it a try
-#    Then The request '<request-uri>' is display on the left column
-#    And The response code '<response-code>'is displayed on the right column
-#    And The response data'<response-data>' is displayed under right column
+    Then The request '<request-uri>' is display on the left column
+    And The response code '<response-code>'is displayed on the right column
+    And The response data'<response-data>' is displayed under right column
 
     Examples:
       | http-method | request-type                | request-uri     | response-code | response-data |
       | GET         | SINGLE USER NOT FOUND       | /api/users/23   | 404           | {}            |
-#      | GET         | SINGLE <RESOURCE> NOT FOUND | /api/unknown/23 | 404           | {}            |
+      | GET         | SINGLE <RESOURCE> NOT FOUND | /api/unknown/23 | 404           | {}            |
 
 

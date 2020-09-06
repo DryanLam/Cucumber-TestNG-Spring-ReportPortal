@@ -18,8 +18,8 @@ public class DBConfiguration {
 
     private final String URL = "db.connect.url";
     private final String DRIVER = "db.connect.driver";
-    private final String USER = "db.connect.dbuser";
-    private final String PASSWORD = "db.connect.dbpassword";
+    private final String USER = "db.connect.user";
+    private final String PASSWORD = "db.connect.password";
 
     @Bean
     DataSource dataSource() {

@@ -2,6 +2,7 @@ package com.sample.dl.bdd.cucumber.UI.hooks;
 
 import com.sample.dl.bdd.cucumber.UI.configuration.UIConfiguration;
 import com.sample.dl.bdd.cucumber.UI.pages.PageAction;
+import com.sample.dl.bdd.utils.db.DBManager;
 import com.sample.dl.contexts.AppContext;
 import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
@@ -11,6 +12,9 @@ import org.springframework.test.context.ContextConfiguration;
 
 @ContextConfiguration(classes = {AppContext.class})
 public class UIHooks {
+
+    @Autowired
+    DBManager db;
 
     @Autowired
     UIConfiguration configUI;

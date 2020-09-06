@@ -17,7 +17,7 @@ import org.testng.annotations.BeforeSuite;
                 "com.sample.dl.bdd.cucumber.UI.steps"
         },
         features = {"src/test/groovy/com/sample/dl/bdd/cucumber/UI/features"},
-        tags = {" @UI_Browsers_01"}
+        tags = {" @UI_Browsers"}
 )
 public class UIRunner extends AbstractTestNGCucumberTests {
 
