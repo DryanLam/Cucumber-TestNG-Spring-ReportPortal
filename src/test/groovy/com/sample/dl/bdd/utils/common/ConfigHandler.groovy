@@ -4,13 +4,10 @@ import groovy.util.logging.Slf4j
 
 @Slf4j
 class ConfigHandler {
-    private Properties prop
 
-    ConfigHandler(){
-        initConfig()
-    }
+    private static Properties prop
 
-    def initConfig(){
+    static ConfigHandler init(){
         try{
             prop = new Properties();
             def inputStream = ClassLoader.getSystemResourceAsStream("config.properties")
@@ -18,25 +15,14 @@ class ConfigHandler {
         }catch (Exception e){
             log.info(e.printStackTrace())
         }
+        return new ConfigHandler()
     }
 
-    def getLogLevel(){
+    static String getLogLevel(){
         prop.getProperty("log.level")
     }
 
-    def getBrowserType(){
-        prop.getProperty("browser.test.type")
-    }
-
-    def getBrowserScriptTimeout(){
-        prop.getProperty("browser.script.timeout").toInteger()
-    }
-
-    def getBrowserPageLoadTimeout(){
-        prop.getProperty("browser.page.timeout").toInteger()
-    }
-
-    def getGridHubServer(){
-        prop.getProperty("remote.server.hub")
+    static String getDataTestFolder(){
+        prop.getProperty("data.test.folder")
     }
 }

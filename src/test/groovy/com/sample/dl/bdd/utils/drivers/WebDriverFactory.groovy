@@ -1,6 +1,7 @@
 package com.sample.dl.bdd.utils.drivers
 
-import com.sample.dl.bdd.utils.common.ConfigHandler
+
+import com.sample.dl.bdd.utils.exceptions.TestException
 import groovy.util.logging.Slf4j
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
@@ -8,6 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.remote.DesiredCapabilities
 import org.openqa.selenium.remote.RemoteWebDriver
 import org.openqa.selenium.remote.SessionId
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 
 import java.util.concurrent.TimeUnit
@@ -15,15 +17,22 @@ import java.util.concurrent.TimeUnit
 @Slf4j
 @Service
 class WebDriverFactory {
-    private ConfigHandler config
-    private String browserType
+
+    @Value('${browser.test.type}')
+    private String browserType;
+
+    @Value('${remote.server.hub}')
+    private String gridHubServer;
+
+    @Value('${browser.page.timeout}')
+    private String pageLoadTimeout
+
+    @Value('${browser.script.timeout}')
+    private String scriptTimeout
+
     private WebDriver driver
 
     WebDriver createDriver() {
-        config = new ConfigHandler()
-        browserType = config.getBrowserType()
-        String gridHubServer = config.getGridHubServer()
-
         if ((gridHubServer != null) && !gridHubServer.isEmpty()) {
             driver = getRemoteDriver()
         } else {
@@ -48,14 +57,10 @@ class WebDriverFactory {
     }
 
     void setBrowserTimeouts(WebDriver driver) {
-        // Page loads timeout
-        int timeout = config.getBrowserPageLoadTimeout()
-        log.info(String.format("Set browser page load timeout to %d", timeout))
-        driver.manage().timeouts().pageLoadTimeout(timeout, TimeUnit.SECONDS)
-        // Script timeout
-        timeout = config.getBrowserScriptTimeout();
-        log.info(String.format("Set browser script timeout to %d", timeout))
-        driver.manage().timeouts().setScriptTimeout(timeout, TimeUnit.SECONDS)
+        log.info("Set page load timeout to ${pageLoadTimeout}")
+        driver.manage().timeouts().pageLoadTimeout(pageLoadTimeout.toInteger(), TimeUnit.SECONDS)
+        log.info("Set browser script timeout to ${scriptTimeout}")
+        driver.manage().timeouts().setScriptTimeout(scriptTimeout.toInteger(), TimeUnit.SECONDS)
     }
 
 
@@ -88,13 +93,15 @@ class WebDriverFactory {
         String gridHubUrl
         DesiredCapabilities capabilities
         WebDriver driver
-        if (config.getGridHubServer().split(":").length == 2) {
-            gridHubUrl = String.format("http://%s/wd/hub", config.getGridHubServer())
-        } else {
-            gridHubUrl = String.format("http://%s:4444/wd/hub", config.getGridHubServer())
+
+        switch (gridHubServer.split(":").length) {
+            case 1: gridHubUrl = String.format("http://%s:4444/wd/hub", gridHubServer); break
+            case 2: gridHubUrl = String.format("http://%s/wd/hub", gridHubServer); break
+            default: throw new TestException("---Error: Invalid Remote Url");
         }
         log.info("Creating remote " + browserType + " WebDriver on " + gridHubUrl)
 
+        // Init brow options
         switch (browserType) {
             case "CHROME":
                 Object options = DriverOptions.setChromeProfile()
@@ -116,12 +123,14 @@ class WebDriverFactory {
         // Add any capabilities across all browsers
         capabilities.setJavascriptEnabled(true)
 
+        // Start new remote driver
         try {
             driver = new RemoteWebDriver(new URL(gridHubUrl), capabilities)
-        } catch (final MalformedURLException e) {
-            log.error(e.getStackTrace());
+            setBrowserTimeouts(driver)
+        } catch (e) {
+            log.error(e.message);
+            throw new TestException(e)
         }
-        setBrowserTimeouts(driver)
         return driver
     }
 }

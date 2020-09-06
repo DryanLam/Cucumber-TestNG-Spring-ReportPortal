@@ -47,3 +47,38 @@
 2020-09-06 03:15:44 INFO c.s.d.b.c.UI.pages.PageAction - getText - /api/unknown/23
 2020-09-06 03:15:45 INFO c.s.d.b.c.UI.pages.PageAction - getText - 404
 2020-09-06 03:15:45 INFO c.s.d.b.c.UI.pages.PageAction - getText - {}
+2020-09-06 11:47:09 INFO c.s.d.b.u.drivers.WebDriverFactory - getRemoteDriver - Creating remote browser.test.type WebDriver on http://remote.server.hube:4444/wd/hub
+2020-09-06 11:48:04 INFO c.s.d.b.u.drivers.WebDriverFactory - getRemoteDriver - Creating remote browser.test.type WebDriver on http://remote.server.hube:4444/wd/hub
+2020-09-06 11:49:25 INFO c.s.d.b.u.drivers.WebDriverFactory - getRemoteDriver - Creating remote browser.test.type WebDriver on http://remote.server.hube:4444/wd/hub
+2020-09-06 11:49:25 ERROR c.s.d.b.u.drivers.WebDriverFactory - getRemoteDriver - Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FGV07H2', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_242'
+Driver info: driver.version: WebDriverFactory$getDriver
+2020-09-06 11:53:41 INFO c.s.d.b.u.drivers.WebDriverFactory - getRemoteDriver - Creating remote browser.test.type WebDriver on http://remote.server.hub:4444/wd/hub
+2020-09-06 11:57:11 INFO c.s.d.b.u.drivers.WebDriverFactory - getRemoteDriver - Creating remote CHROME WebDriver on http://${remote.server.hub}:4444/wd/hub
+2020-09-06 11:57:37 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-06 11:57:44 INFO c.s.d.b.u.drivers.WebDriverFactory - invoke0 - Set page load timeout to 60
+2020-09-06 11:57:45 INFO c.s.d.b.u.drivers.WebDriverFactory - invoke0 - Set browser script timeout to 60
+2020-09-06 11:57:50 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-06 12:26:55 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-06 12:27:00 INFO c.s.d.b.u.drivers.WebDriverFactory - invoke0 - Set page load timeout to 60
+2020-09-06 12:27:00 INFO c.s.d.b.u.drivers.WebDriverFactory - invoke0 - Set browser script timeout to 60
+2020-09-06 12:27:05 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-06 12:34:49 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : /src/test/groovy/com/sample/dl/bdd/data dir is: null
+2020-09-06 12:40:27 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 12:40:28 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-06 12:40:32 INFO c.s.d.b.u.drivers.WebDriverFactory - invoke0 - Set page load timeout to 60
+2020-09-06 12:40:32 INFO c.s.d.b.u.drivers.WebDriverFactory - invoke0 - Set browser script timeout to 60
+2020-09-06 12:40:37 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page
+2020-09-06 12:40:58 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 12:47:43 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 12:51:19 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 12:52:18 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 12:53:57 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 12:57:36 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 12:58:37 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 13:09:36 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
+2020-09-06 13:09:37 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-06 13:09:43 INFO c.s.d.b.u.drivers.WebDriverFactory - invoke0 - Set page load timeout to 60
+2020-09-06 13:09:43 INFO c.s.d.b.u.drivers.WebDriverFactory - invoke0 - Set browser script timeout to 60
+2020-09-06 13:09:47 INFO c.s.d.b.cucumber.UI.pages.HomePage - goToHomePage - Welcome to home page

@@ -1,13 +1,11 @@
 package com.sample.dl.bdd.cucumber.UI.runner;
 
+import com.sample.dl.bdd.utils.common.DataDrivenHandler;
 import com.sample.dl.bdd.utils.common.LogManager;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.springframework.test.context.event.annotation.BeforeTestExecution;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 
 @CucumberOptions(
 //        tags = {"@UI,@steptest"}, // OR
@@ -30,6 +28,9 @@ public class UIRunner extends AbstractTestNGCucumberTests {
     @BeforeSuite()
     public void beforeSuite() {
         LogManager.setLogLevel();
+        DataDrivenHandler data = DataDrivenHandler.getInstance();
+
+        data.getValue("$..email");
 
         LogManager.info("====================================================");
         LogManager.info("             Start UI Automation Test               ");

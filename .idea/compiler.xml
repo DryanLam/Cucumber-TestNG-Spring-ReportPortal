@@ -6,11 +6,10 @@
       <profile default="true" name="Default" enabled="true">
         <processor name="lombok.launch.AnnotationProcessorHider$AnnotationProcessor" />
       </profile>
-      <profile name="Annotation profile for BDD_Spring_Groovy" enabled="true">
+      <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processor name="lombok.launch.AnnotationProcessorHider$AnnotationProcessor" />
         <module name="Gro_Ja_Mvn" />
       </profile>
     </annotationProcessing>

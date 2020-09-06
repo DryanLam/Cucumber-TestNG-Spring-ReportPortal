@@ -13,8 +13,7 @@ class LogManager {
      * Only PERMIT_LEVEL can populate the log level
      **/
     static void setLogLevel() {
-        def config = new ConfigHandler()
-        def logLevel = config.getLogLevel()
+        def logLevel = ConfigHandler.init().getLogLevel()
 
         if (!PERMIT_LEVELS.any { it.equalsIgnoreCase(logLevel) }) {
             loggerContext.stop()
