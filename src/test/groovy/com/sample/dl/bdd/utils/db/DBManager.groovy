@@ -2,15 +2,13 @@ package com.sample.dl.bdd.utils.db
 
 import org.apache.poi.ss.formula.functions.T
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.dao.DataAccessException
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Component
 import javax.sql.DataSource;
 
 @Component
 class DBManager {
-//    @Autowired
-//    JdbcTemplate jdbcTemplate
-
     private JdbcTemplate jdbcTemplate
 
     @Autowired
@@ -18,21 +16,41 @@ class DBManager {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    def execute(String statement){
-        return jdbcTemplate.execute(statement)
+    /**
+     * General execute sql
+     * @param statement SQL statement
+     * */
+    def execute(String statement) {
+        jdbcTemplate.execute(statement)
     }
 
-    def queryData(String statement){
+
+    /**
+     * Execute query sql
+     * @param statement SQL statement
+     * @return List<Map<String, Object> >
+     * */
+    def queryData(String statement) throws DataAccessException{
         return jdbcTemplate.queryForList(statement)
     }
 
-    def queryForObject(String statement, Class<T> valueType){
+
+    /**
+     * Execute query sql and then map to Object
+     * @param statement SQL statement
+     * @return List<Map<String, Object> >
+     * */
+    def queryForObject(String statement, Class<T> valueType) throws DataAccessException{
         return jdbcTemplate.queryForObject(statement, valueType)
     }
 
-    def queryForList(String statement, Class<T> valueType){
+
+    /**
+     * Execute query sql and then map to Object
+     * @param statement SQL statement
+     * @return List<Map<String, Object> >
+     * */
+    def queryForList(String statement, Class<T> valueType) throws DataAccessException{
         return jdbcTemplate.queryForList(statement, valueType)
     }
-
-
 }

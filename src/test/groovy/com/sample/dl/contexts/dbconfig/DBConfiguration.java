@@ -31,11 +31,4 @@ public class DBConfiguration {
         driverDataSource.setDriverClassName(env.getProperty(DRIVER));
         return driverDataSource;
     }
-
-//    @Bean
-//    public JdbcTemplate jdbcTemplate() {
-//        JdbcTemplate template = new JdbcTemplate();
-//        template.setDataSource(dataSource());
-//        return template;
-//    }
 }

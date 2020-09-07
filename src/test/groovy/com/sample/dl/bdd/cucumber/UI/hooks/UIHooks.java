@@ -24,7 +24,6 @@ public class UIHooks {
 
     @Before
     public void setUpScenario() {
-        db.queryData("select * from test");
         pageAction.initPageFactory();
         pageAction.openBrowser(configUI.getEndpoint());
     }
