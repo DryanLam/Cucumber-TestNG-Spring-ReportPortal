@@ -8,6 +8,9 @@ import javax.sql.DataSource;
 
 @Component
 class DBManager {
+//    @Autowired
+//    JdbcTemplate jdbcTemplate
+
     private JdbcTemplate jdbcTemplate
 
     @Autowired
@@ -15,16 +18,20 @@ class DBManager {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    def execute(String statement){
+        return jdbcTemplate.execute(statement)
+    }
+
     def queryData(String statement){
-       return jdbcTemplate.execute(statement)
+        return jdbcTemplate.queryForList(statement)
     }
 
     def queryForObject(String statement, Class<T> valueType){
         return jdbcTemplate.queryForObject(statement, valueType)
     }
 
-    def queryForList(String statement){
-        return jdbcTemplate.queryForList(statement)
+    def queryForList(String statement, Class<T> valueType){
+        return jdbcTemplate.queryForList(statement, valueType)
     }
 
 

@@ -34,6 +34,8 @@
         <jayway.version>2.4.0</jayway.version>
         <excel.version>4.1.2</excel.version>
         <postgre.version>42.2.16</postgre.version>
+        <mysql.version>8.0.21</mysql.version>
+
     </properties>
 
     <repositories>
@@ -115,6 +117,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>${postgre.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
 
         <!-- JACKSON -->
