@@ -1,4 +1,5 @@
 # Cucumber Spring TestNG ReportIO
+### Introduce
 This framework supports for automated test both Web UI & Web services using Cucumber BDD, Java Spring using TestNG as an unit testing framework. Generate cucumber report (json, html) and a configuration to integrate with ReportPortal
 
 
@@ -17,23 +18,35 @@ This framework supports for automated test both Web UI & Web services using Cucu
 
 ### Prerequisite!
 
-  - Install [OpenJDK 1.8.0_242
+  - Install [OpenJDK 1.8.0_242]
   - Install [Groovy 2.5.x]
   - Install [Maven 3.6.x]
 
+### Tech Stacks
+![Screenshot](https://github.com/DryanLam/Cucumber-TestNG-Spring-ReportPortal/blob/master/images/stack.PNG)
 
+### Structure
+![Screenshot](https://github.com/DryanLam/Cucumber-TestNG-Spring-ReportPortal/blob/master/images/structure.PNG)
 
 
 ### Run App
 
-* Clone [TADPparser] project
-* Navigate to **source** directory where containings 'TADPparser.groovy'
+* Clone project
+* Navigate to **source** directory where containings 'pom.xml' file
 * Open the command line and run with certain options
 
-Default for UI run all regression suite (without ReportPortal)
-
 ```sh
+# Default for UI run all regression suite (without ReportPortal)
 mvn clean test
+
+# WS
+mvn clean test -Dtest.type=WS -Dtest.name=WS
+
+# Report WS to ReportPortal.io
+mvn clean test -Dtest.type=WS -Dtest.name=WSIO -Drp.launch=WS_ReportPortal
+
+# Report UI to ReportPortal.io
+mvn clean test -Dtest.type=UI -Dtest.name=UIIO -Drp.launch=UI_ReportPortal
 ```
 
 Analysis scan code via Sonar (change url below to your SonarQube server)
@@ -55,3 +68,9 @@ Options:
 
 
 Note: There are docker files in docker folder to serve you in building container for SonarQube and ReportPortal.
+
+### Configuration
+All necessary configurations for testing are publicly in properties file under resources folder such as config.properties, sonar-project.properties, etc
+
+
+Besides, we also support gradle in 'gradle' branch. Check it out and try it.
