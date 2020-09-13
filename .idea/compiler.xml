@@ -6,14 +6,8 @@
       <profile default="true" name="Default" enabled="true">
         <processor name="lombok.launch.AnnotationProcessorHider$AnnotationProcessor" />
       </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="Gro_Ja_Mvn" />
-      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="Gro_Ja_Mvn" target="1.8" />
     </bytecodeTargetLevel>
   </component>

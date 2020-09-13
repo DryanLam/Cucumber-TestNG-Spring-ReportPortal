@@ -101,3 +101,5 @@ k
 ;src/test/groovy/com/sample/dl/bdd/utils/db/DBManager.groovy,0\7\074683813a3588ec901b7fc8e62c2a03af019862
 O
 docker/mysql/docker-compose.yml,0\8\08c5ce71067d446d5b03418888b662c61f742cc9
+9
+	Readme.md,0\c\0c1945d7443c2e154bd3e421c0d438bd4086d8c3

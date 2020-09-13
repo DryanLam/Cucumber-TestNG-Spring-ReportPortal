@@ -9,41 +9,41 @@ plugins {
 }
 
 repositories {
-    mavenCentral()
     mavenLocal()
+    mavenCentral()
     maven {
         url = uri('http://dl.bintray.com/epam/reportportal')
     }
 }
 
 dependencies {
-    compile 'com.epam.reportportal:agent-java-cucumber4:5.0.0-BETA-14'
-    compile 'io.cucumber:gherkin:5.1.0'
-    compile 'io.cucumber:cucumber-java:4.7.1'
-    compile 'io.cucumber:cucumber-testng:4.7.1'
-    compile 'io.cucumber:cucumber-spring:4.7.1'
-    compile 'io.cucumber:cucumber-core:4.7.1'
-    compile 'org.springframework:spring-jdbc:5.2.8.RELEASE'
-    compile 'org.springframework:spring-context:5.2.8.RELEASE'
-    compile 'org.springframework:spring-test:5.2.8.RELEASE'
-    compile 'org.springframework:spring-web:5.2.8.RELEASE'
-    compile 'org.postgresql:postgresql:42.2.16'
-    compile 'mysql:mysql-connector-java:8.0.21'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
-    compile 'com.fasterxml.jackson.core:jackson-core:2.11.1'
-    compile 'org.codehaus.groovy:groovy-all:2.4.3'
-    compile 'org.hamcrest:hamcrest-all:1.3'
-    compile 'org.seleniumhq.selenium:selenium-java:3.141.59'
-    compile 'io.rest-assured:rest-assured:4.2.0'
-    compile 'com.jayway.jsonpath:json-path:2.4.0'
-    compile 'com.google.guava:guava:29.0-jre'
-    compile 'org.apache.poi:poi-ooxml:4.1.2'
-    compile 'org.apache.poi:poi-scratchpad:4.1.2'
-    compile 'org.apache.poi:poi-ooxml-schemas:4.1.2'
-    compile 'org.apache.poi:ooxml-schemas:1.3'
-    compile 'org.assertj:assertj-core:3.12.2'
-    compile 'io.github.bonigarcia:webdrivermanager:4.2.0'
-    compile 'ch.qos.logback:logback-classic:1.2.3'
+    implementation 'com.epam.reportportal:agent-java-cucumber4:5.0.0-BETA-14'
+    implementation 'io.cucumber:gherkin:5.1.0'
+    implementation 'io.cucumber:cucumber-java:4.7.1'
+    implementation 'io.cucumber:cucumber-testng:4.7.1'
+    implementation 'io.cucumber:cucumber-spring:4.7.1'
+    implementation 'io.cucumber:cucumber-core:4.7.1'
+    implementation 'org.springframework:spring-jdbc:5.2.8.RELEASE'
+    implementation 'org.springframework:spring-context:5.2.8.RELEASE'
+    implementation 'org.springframework:spring-test:5.2.8.RELEASE'
+    implementation 'org.springframework:spring-web:5.2.8.RELEASE'
+    implementation 'org.postgresql:postgresql:42.2.16'
+    implementation 'mysql:mysql-connector-java:8.0.21'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.11.1'
+    implementation 'org.codehaus.groovy:groovy-all:2.4.3'
+    implementation 'org.hamcrest:hamcrest-all:1.3'
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation 'io.rest-assured:rest-assured:4.2.0'
+    implementation 'com.jayway.jsonpath:json-path:2.4.0'
+    implementation 'com.google.guava:guava:29.0-jre'
+    implementation 'org.apache.poi:poi-ooxml:4.1.2'
+    implementation 'org.apache.poi:poi-scratchpad:4.1.2'
+    implementation 'org.apache.poi:poi-ooxml-schemas:4.1.2'
+    implementation 'org.apache.poi:ooxml-schemas:1.3'
+    testImplementation 'org.assertj:assertj-core:3.12.2'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:4.2.0'
+    testImplementation 'ch.qos.logback:logback-classic:1.2.3'
     compile 'org.projectlombok:lombok:1.18.4'
 }
 
@@ -63,42 +63,86 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-test {
-    // enable TestNG support (default is JUnit)
-    useTestNG() {
-        suites "src/test/resources/UI/UI-Testsuite.xml"
+
+ext{
+    // gradle -PsuiteFile=WS/WS-Testsuite.xml
+    // set suiteFile, default is 'UI/UI-Testsuite.xml'
+    if(!project.hasProperty('suiteUI')) {
+        suiteUI = 'UI/UI-Testsuite.xml'
     }
 
-    // enable JUnit Platform (a.k.a. JUnit 5) support
+    if(!project.hasProperty('suiteWS')) {
+        suiteWS = 'WS/WS-Testsuite.xml'
+    }
+}
+
+
+task testUI (type: Test, dependsOn: ['clean'], description: "Run smoke tests", group: "Smoke"){
+    // Fail fast
+    failFast = true
+
+    // Use TestNG
+    useTestNG() {
+        // Test Suites
+        suites "src/test/resources/" + suiteUI
+
+
+        // set a system property for the test JVM(s)
+        // -P for Gradle/Project, -D for System
+        systemProperty "username", "-Dusername"
+        systemProperties System.properties
+
+        println(System.getProperty("username"))
+
+    }
+
+//    // Enable JUnit Platform (a.k.a. JUnit 5) support
 //    useJUnitPlatform()
 
-    // set a system property for the test JVM(s)
-//    systemProperty 'some.prop', 'value'
-
-    // explicitly include or exclude tests
+//    //Explicitly include or exclude tests
 //    include 'org/foo/**'
 //    exclude 'org/boo/**'
+//
+    // JVM
+    // Set heap size for the test JVM(s)
+    minHeapSize = "128m"
+    maxHeapSize = "512m"
 
-    // show standard out and standard error of the test JVM(s) on the console
-//    testLogging.showStandardStreams = true
+    // Set JVM arguments for the test JVM(s)
+    jvmArgs '-XX:MaxPermSize=256m'
 
-    // set heap size for the test JVM(s)
-//    minHeapSize = "128m"
-//    maxHeapSize = "512m"
+    // Show standard out and standard error of the test JVM(s) on the console
+    testLogging.showStandardStreams = true
 
-    // set JVM arguments for the test JVM(s)
-//    jvmArgs '-XX:MaxPermSize=256m'
-
-    // listen to events in the test execution lifecycle
-//    beforeTest { descriptor ->
-//        logger.lifecycle("Running test: " + descriptor)
-//    }
-
-    // Fail the 'test' task on the first test failure
-//    failFast = true
-
-    // listen to standard out and standard error of the test JVM(s)
+    // Listen to events in the test execution lifecycle
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
     onOutput { descriptor, event ->
         logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message)
     }
+}
+
+
+task testWS (type: Test, description: "Run smoke tests", group: "Smoke"){
+    // Fail fast
+    failFast = true
+
+    // Use TestNG
+    useTestNG() {
+        dependsOn cleanTest
+
+        // Test Suites
+        suites "src/test/resources/${suiteWS}"
+
+        systemProperties System.properties
+    }
+
+    // JVM
+    // Set heap size for the test JVM(s)
+    minHeapSize = "128m"
+    maxHeapSize = "512m"
+
+    // Set JVM arguments for the test JVM(s)
+    jvmArgs '-XX:MaxPermSize=256m'
 }
