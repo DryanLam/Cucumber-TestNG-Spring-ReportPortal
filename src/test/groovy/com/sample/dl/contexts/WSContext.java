@@ -8,7 +8,11 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-@ComponentScan(basePackages = {"com.sample.dl.bdd.cucumber.WS","com.sample.dl.bdd.utils"},
+@ComponentScan(basePackages = {
+        "com.sample.dl.bdd.cucumber.WS",
+        "com.sample.dl.contexts.dbconfig",
+        "com.sample.dl.bdd.utils"
+        },
                excludeFilters = @ComponentScan.Filter(IgnoreScan.class))
 public class WSContext {
     @Bean
