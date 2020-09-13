@@ -12,16 +12,12 @@ import org.springframework.web.client.RestTemplate;
         "com.sample.dl.bdd.cucumber.WS",
         "com.sample.dl.contexts.dbconfig",
         "com.sample.dl.bdd.utils"
-        },
-               excludeFilters = @ComponentScan.Filter(IgnoreScan.class))
+},
+        excludeFilters = @ComponentScan.Filter(IgnoreScan.class))
 public class WSContext {
+    //To resolve ${} in @Value
     @Bean
-    static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+    public static PropertySourcesPlaceholderConfigurer propertyConfigInDev() {
         return new PropertySourcesPlaceholderConfigurer();
-    }
-
-    @Bean
-    RestTemplate restTemplate() {
-        return new RestTemplate();
     }
 }

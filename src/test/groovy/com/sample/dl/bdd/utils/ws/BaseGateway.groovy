@@ -5,11 +5,9 @@ import org.springframework.web.client.RestTemplate
 
 class BaseGateway {
 
-    protected RestTemplate restTemplate;
     protected final String baseUri;
 
-    BaseGateway(RestTemplate restTemplate, String baseUri) {
-        this.restTemplate = restTemplate;
+    BaseGateway(String baseUri) {
         this.baseUri = baseUri;
     }
 

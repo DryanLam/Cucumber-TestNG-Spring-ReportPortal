@@ -75,3 +75,8 @@
 2020-09-07 11:54:17 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
 2020-09-07 11:56:14 INFO c.s.d.b.u.common.DataDrivenHandler - <init> - the data path directiory is : D:\QADP\CodeTech\Cucumber_TestNG_Spring/src/test/groovy/com/sample/dl/bdd/data
 2020-09-07 11:56:21 INFO c.s.d.b.u.drivers.WebDriverFactory - getLocalDriver - Creating local CHROME Webdriver
+2020-09-13 22:10:24 INFO c.s.d.bdd.cucumber.WS.hooks.WSHooks - setUpScenario - Test WS
+2020-09-13 22:11:35 INFO c.s.d.bdd.cucumber.WS.hooks.WSHooks - setUpScenario - Test WS
+2020-09-13 22:11:51 INFO c.s.d.bdd.cucumber.WS.hooks.WSHooks - setUpScenario - Test WS
+2020-09-13 22:12:40 INFO c.s.d.bdd.cucumber.WS.hooks.WSHooks - setUpScenario - Test WS
+2020-09-13 22:18:37 INFO c.s.d.bdd.cucumber.WS.hooks.WSHooks - setUpScenario - Test WS

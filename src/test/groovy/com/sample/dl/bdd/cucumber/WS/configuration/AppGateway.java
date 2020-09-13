@@ -28,8 +28,8 @@ class AppGateway extends BaseGateway {
     WSResponse res;
 
     @Autowired
-    public AppGateway(RestTemplate restTemplate, @Value("${ws.app.url}") String baseUri) {
-        super(restTemplate, baseUri);
+    public AppGateway( @Value("${ws.app.url}") String baseUri) {
+        super(baseUri);
     }
 
     private CookieFilter filter = new CookieFilter();
