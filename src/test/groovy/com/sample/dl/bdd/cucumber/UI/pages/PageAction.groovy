@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationContext
 import org.springframework.stereotype.Component
+
+import javax.annotation.PreDestroy
 import java.util.concurrent.TimeUnit
 
 @Component
@@ -42,6 +44,7 @@ class PageAction {
         driver.manage().timeouts().implicitlyWait(Timeouts.MEDIUM_TIME, TimeUnit.SECONDS);
     }
 
+    @PreDestroy
     def closeBrowser(){
         driver.quit()
     }
