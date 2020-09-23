@@ -6,7 +6,9 @@ import com.sample.dl.bdd.utils.asserts.Assert
 import com.sample.dl.bdd.utils.common.ExcelUtils
 import com.sample.dl.bdd.utils.common.Parser
 import com.sample.dl.bdd.utils.ws.WSResponse
+import groovy.json.JsonSlurper
 import groovy.util.logging.Slf4j
+import io.cucumber.core.api.Scenario
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
@@ -33,6 +35,11 @@ class FakeDataWSSteps {
         gateway.setHeader(defaultHeader)
     }
 
+    @Given(/^We use register header$/)
+    def we_use_register_header(){
+        gateway.getHeader()
+    }
+
     @When(/^We send a POST request to '(.+?)' endpoint with body:$/)
     def we_send_a_POST_request_to_endpoint_with_body(String endPoint, String dataDody) {
         gateway.doPostRequest(endPoint, dataDody)
@@ -51,8 +58,8 @@ class FakeDataWSSteps {
 
     @Then(/^We got the Response with body:$/)
     def we_got_the_Response_with_body(String jsonBody) {
-        UserDTO expected = parser.parseFromJson(jsonBody, UserDTO.class);
-        UserDTO actual = parser.parseFromJson(response.getBodyAsString(), UserDTO.class);
+        def expected = parser.parseToJson(jsonBody);
+        def actual = parser.parseToJson(response.getBodyAsString());
         Assert.assertEquals(expected.toString(), actual.toString())
     }
 
@@ -65,5 +72,16 @@ class FakeDataWSSteps {
         int colNum = 2
         def celValue = excel.readFile(filePath, sheetName, rowNum, colNum)
         log.info(celValue.toString())
+    }
+
+
+    @When(/^We register web service$/)
+    def we_register_webserice(){
+        gateway.doGetRequest("/register")
+    }
+
+    @When(/^We logout web service$/)
+    def we_logout_webserice(){
+        gateway.doGetRequest("/logout")
     }
 }

@@ -1,5 +1,6 @@
 package com.sample.dl.bdd.utils.common;
 
+import groovy.json.JsonSlurper;
 import io.cucumber.datatable.DataTable;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
@@ -13,5 +14,9 @@ public class Parser {
 
     public <T> T parseFromJson(String jsonString, Class clazz) {
         return (T) JsonObjectMapper.get().readValue(jsonString, clazz);
+    }
+
+    public Object parseToJson(String jsonString){
+        return new JsonSlurper().parseText(jsonString);
     }
 }

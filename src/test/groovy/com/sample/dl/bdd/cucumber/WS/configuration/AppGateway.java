@@ -39,6 +39,10 @@ class AppGateway extends BaseGateway {
         this.header = header;
     }
 
+    public Map getHeader(){
+        return header;
+    }
+
     public Response doAuthentication(String userName, String passWord, Object bodyObj){
         return given()
                 .filter(filter)
