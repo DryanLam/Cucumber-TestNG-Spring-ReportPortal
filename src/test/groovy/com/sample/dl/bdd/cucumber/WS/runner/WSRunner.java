@@ -16,7 +16,8 @@ import org.testng.annotations.BeforeSuite;
                 "com.sample.dl.bdd.cucumber.WS.steps"
         },
         features = {"src/test/groovy/com/sample/dl/bdd/cucumber/WS/features"},
-        tags = {"@API","@ID-1001"}
+        tags = {"@Agent"}
+//        tags = {"@API","@ID-1001"}
 )
 
 public class WSRunner extends AbstractTestNGCucumberTests {

@@ -1,4 +1,4 @@
-@API
+@API @Agent
 Feature: Demo automated test for FlashHatch
 
   Background: User uses default header to access application
@@ -7,13 +7,13 @@ Feature: Demo automated test for FlashHatch
 
   @ID-1001
   Scenario: Test book api
-    When We send a GET request to '/books' endpoint
+    When We send a GET request to '/book' endpoint
     Then We got the Response with status code '200'
     And We got the Response with body:
     """
     {
       "total": "3",
-      "cost": "2000",
+      "cost": "2000"
     }
     """
     And We logout web service
@@ -26,21 +26,33 @@ Feature: Demo automated test for FlashHatch
     """
     {
       "name": "Dryan Lam",
-      "BU": "Turing",
+      "BU": "Turing"
     }
     """
     And We logout web service
 
   @ID-1003
   Scenario: Test user api
-    When We send a GET request to '/car' endpoint
+    When We send a GET request to '/bike' endpoint
     Then We got the Response with status code '200'
     And We got the Response with body:
     """
     {
       "name": "Future",
-      "type": "",
-      "BU": "Turing",
+      "type": "Road"
+    }
+    """
+    And We logout web service
+
+  @ID-1004
+  Scenario: Test user api
+    When We send a GET request to '/car' endpoint
+    Then We got the Response with status code '200'
+    And We got the Response with body:
+    """
+    {
+      "name": "Jeep",
+      "type": "Off Road"
     }
     """
     And We logout web service
