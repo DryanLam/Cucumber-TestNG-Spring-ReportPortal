@@ -6,6 +6,7 @@ import groovy.util.logging.Slf4j
 import io.cucumber.core.api.Scenario
 import io.cucumber.java.After
 import io.cucumber.java.Before
+import io.cucumber.java.BeforeStep
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.ContextConfiguration
 
@@ -26,6 +27,11 @@ class WSHooks {
     @After
     void tearDownScenario(Scenario sc){
 
+    }
+
+    @BeforeStep
+    void handleInterceptor(){
+        Thread.sleep(1250);
     }
 }
 
