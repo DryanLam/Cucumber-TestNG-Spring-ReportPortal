@@ -304,7 +304,7 @@
                             <environment>${environment}</environment>
                         </systemPropertyVariables>
                         <suiteXmlFiles>
-                            <suiteXmlFile>src/test/resources/${test.type}/${test.name}-testsuite.xml</suiteXmlFile>
+                            <suiteXmlFile>src/test/resources/${test.type}/${test.name}-Testsuite.xml</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
